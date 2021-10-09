@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Sign in</title>
+
+    <link href="../static/css/signInStyles3.css" th:href="@{/css/signInStyles3.css}" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
+
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+        The email or password is incorrect!
+    </div>
+    <div class="forms-container">
+        <div class="signin-signup">
+            <form th:action="@{/login}" method="post" class="sign-in-form">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="email" name="email" placeholder="Email" required autofocus/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required/>
+
+                </div>
+                <button type="submit" class="btn solid">Login</button>
+                <p class="social-text">Or Sign in with social platforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </form>
+            <form action="#" class="sign-up-form">
+                <h2 class="title">Create your account</h2>
+                <h3>Join the world’s work marketplace.</h3>
+                <div class="btn-chose">
+
+                    <a href="signupBoss" style="text-decoration:none">
+                        <button onclick="" type="button" class="btn">Find Talent</button>
+                    </a>
+                    <a th:href="@{/signupEmployee}" style="text-decoration:none">
+                        <button type="button" class="btn">Get Hired</button>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>New here?</h3>
+                <p>
+                    Upwork has over eighteen million registered
+                    freelancers and five million registered clients.
+                    Three million jobs worth over $1Bn USD are posted annually,
+                    making Upwork the largest freelancer marketplace in the world.
+                </p>
+                <button class="btn transparent" id="sign-up-btn">
+                    Sign up
+                </button>
+
+            </div>
+            <img th:src="@{/images/SignInAndSignUp/signIn.svg}" alt="" class="image"/>
+        </div>
+
+        <div class="panel right-panel">
+            <div class="content">
+                <h3>Let go</h3>
+                <p>
+                    Let create your account for your jobs
+                </p>
+                <button class="btn transparent" id="sign-in-btn">
+                    Sign in
+                </button>
+            </div>
+            <img  th:src="@{/images/SignInAndSignUp/signUp.svg}" alt="" class="image"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/js/SignInAndSignUp/loginJS.js}">
+
+</script>
+</body>
+
+</html>

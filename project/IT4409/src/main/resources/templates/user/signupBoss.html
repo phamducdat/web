@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/signUpStylesEmployee2.css" th:href="@{/css/signUpStylesEmployee2.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="boss">
+
+    <div class="container">
+
+        <form role="form" method="POST" th:action="@{/signupBoss}" th:object="${user}" id="regForm">
+
+            <div>
+                <div style="color: blue;font-size: large;text-align: center;"
+                     class="alert" id="alert" th:if="${msg}" th:utext="${msg}"></div>
+            </div>
+
+            <div class="tab">
+                <h3>Create account</h3>
+                <input th:field="*{fullname}" type="text" placeholder="Full Name" required>
+                <input th:field="*{email}" type="text" placeholder="Email" required>
+                <input th:field="*{password}" type="password" placeholder="Password" required>
+
+            </div>
+            <div class="tab">
+                <h3>Information</h3>
+                <input th:field="*{company}" type="text" placeholder="Company" required>
+                <input th:field="*{phone}" type="tel" placeholder="Phone" required>
+                <input th:field="*{country}" type="text" placeholder="Country" required>
+            </div>
+            <div class="tab">
+                <h3>Review for you</h3>
+                <textarea th:field="*{review}" type="text" required> </textarea>
+            </div>
+
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <a id="out" th:href="@{/login}" style="text-decoration:none">
+                        <button type="button" onclick="nextPrev(1)">Login</button>
+                    </a>
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+
+                </div>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+        </form>
+    </div>
+
+    <div class="test">
+        <img th:src="@{/images/SignInAndSignUp/bgBoss1.svg}" id="image" alt="" class="image"/>
+    </div>
+
+</div>
+<script type="text/javascript" th:src="@{/js/SignInAndSignUp/signupBossJS.js}">
+
+</script>
+
+</body>
+</html>

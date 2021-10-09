@@ -1,0 +1,498 @@
+body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background: #f1f2f4;
+}
+
+.container {
+    background: #fff;
+    width: 1100px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: 2px 5px 20px
+    rgba(119, 119, 119, .5);
+}
+
+.leftbox {
+    float: left;
+    top: -5%;
+    left: 5%;
+    position: absolute;
+    width: 7.5%;
+    height: 110%;
+    background: #1d4354;
+    box-shadow: 3px 3px 10px
+    rgba(119, 119, 119, .5);
+    border: .1em solid #fff;
+}
+
+nav a {
+    list-style: none;
+    padding: 35px;
+    color: #fff;
+    font-size: 1.1em;
+    display: block;
+    transition: all .3s ease-in-out;
+    margin-top: 50px;
+}
+
+nav a:hover {
+    color: #10ac84;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+nav a.active {
+    color: #10ac84;
+
+}
+
+.rightbox {
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 10px;
+}
+
+.tabShow {
+    transition: all .5s ease-in;
+    width: 80%;
+}
+
+h1 {
+    color: #7ed386;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+h2 {
+    color: #777;
+    text-transform: uppercase;
+    font-size: 8px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+.input, p {
+    border: 0;
+    border-bottom: 1px solid #3fb6a8;
+    width: 80%;
+    font-size: .7em;
+    padding: 7px 0;
+    color: #070707;
+    outline: none;
+}
+
+span {
+    font-size: .7em;
+    color: #777;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 15px;
+    border: 0;
+    color: #fff;
+    background: #7ed386;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px
+    rgba(0, 0, 0, .2);
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.select {
+    background: none;
+}
+
+.wrapper {
+    position: absolute;
+    left: 750px;
+    top: 100px;
+    height: 200px;
+    width: 200px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background: url('/images/default_image.jpeg');
+    background-size: 100% 100%;
+    overflow: hidden;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.my_file {
+    left: 8px;
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    color: transparent;
+    width: 100%;
+    padding: 20px 100px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+}
+
+.my_file::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.my_file::before {
+    content: '\f030';
+    font-family: fontAwesome;
+    font-size: 30px;
+    color: #fff;
+    display: inline-block;
+    -webkit-user-select: none;
+}
+
+.my_file::after {
+    content: 'Update';
+    font-family: 'arial';
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    top: 55px;
+    left: 90px;
+    font-size: 14px;
+    position: absolute;
+}
+
+.my_file:hover {
+    opacity: 1;
+}
+
+.col-1 {
+    width: 60%;
+    display: inline-block;
+}
+
+.col-2 {
+    display: inline-block;
+}
+
+h1.title {
+    font-weight: 700;
+    font-size: 22px;
+    color: #222222;
+}
+
+.button-edit {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+}
+
+.up-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.up-icon svg {
+    fill: #656565;
+}
+
+p.detail {
+    font-size: 14px;
+    color: #222222;
+}
+
+.tabShow {
+    display: none;
+}
+
+
+.header {
+    min-height: 70px;
+    background: #1d4354;
+}
+
+.container-1 {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+}
+
+header {
+    display: flex;
+}
+.header .logo{
+    height: 60px;
+}
+
+.header .search-box-1{
+    border: solid 1px rgb(228, 221, 221);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 6px 5px;
+    background: rgb(228, 221, 221);
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 30px;
+    display: inline-block;
+}
+
+.header .fa-search{
+    color: black;
+    font-size: 12px;
+    padding: 0px 2px;
+    cursor: pointer;
+}
+
+.header .search-box-1 .search{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: black;
+    position: relative;;
+}
+
+.header ul{
+    margin-left: auto;
+    list-style-type: none;
+    display: inline-flex;
+}
+
+header li {
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+header li span {
+    font-size: 20px;
+    color: white;
+}
+
+header .profile {
+    margin-top: 15px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+a, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+ }
+
+ .footer{
+     width: 100%;
+     text-align: center;
+     padding: 30px 0;
+     background: #fff;
+ }
+
+ .footer p{
+     margin: 20px 0px 30px 0px;
+     font-size: 12px;
+     color: #777;
+
+ }
+
+ .footer h4{
+     margin-bottom: 30px;
+ }
+
+ .icons .fa{
+     color: rgb(219, 66, 91);
+     margin: 7px;
+     cursor: pointer;
+ }
+
+ @media(max-width:700px){
+     .footer{
+         width: 100%;
+         text-align: center;
+         /* padding: 30px 0; */
+     }
+ }
+
+.alert {
+  display: none;
+  right: 0;
+  top: -50px;
+  position: absolute;
+  padding: 5px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #4E9359;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #4E9359;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 169px;
+  overflow: auto;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 5px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-input {
+    width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+}
+
+.modal-submit {
+    width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+}

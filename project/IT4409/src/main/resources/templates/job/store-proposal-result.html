@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/freelancer::freelancer-fragment(
+    ~{::title},
+    ~{:: #store-proposal-success-static-resources},
+    ~{:: #store-proposal-success-section-header},
+    ~{:: #store-proposal-success-section-content},
+)}">
+<head>
+    <meta charset="UTF-8">
+    <title>Store proposal result</title>
+
+    <!-- Các tài nguyên JS, CSS riêng của trang này -->
+    <th:block id="store-proposal-success-static-resources">
+        <link th:href="@{/css/job/store-proposal-success.css}" rel="stylesheet" />
+    </th:block>
+</head>
+<body>
+    <section class="section-header" id="store-proposal-success-section-header">
+    </section>
+
+    <section class="section-content" id="store-proposal-success-section-content">
+        <div class="alert alert-success">
+            <span>Submit successful !</span>
+        </div>
+        <div id="redirect-proposals">
+            <a href="/f/proposals">
+                Go to your proposals 
+                <span>
+                    <i class="fad fa-arrow-right"></i>
+                </span>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

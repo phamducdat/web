@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(bg1.svg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.boss:before {
+  content: "";
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  top: -10%;
+  left: 48%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+  transition: 1.8s ease-in-out;
+  border-radius: 50%;
+  z-index: 6;
+}
+
+#regForm {
+  background-color: #00000;
+  margin: 80px auto;
+  margin-left: 20px;
+  font-family: Raleway;
+  padding: 40px;
+  width: 450px;
+  min-width: 300px;
+  position: fixed;
+  transition: 1s;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+
+  width: 100%;
+padding: 10px 5px;
+margin: 5px 0;
+border: 0;
+border-radius: 55px;
+background: none;
+outline: none;
+border: none;
+line-height: 1;
+font-weight: 600;
+font-size: 1.1rem;
+color: #333;
+background-color: #f0f0f0
+}
+
+textarea {
+height: 142px;
+width: 100%;
+padding: 10px 5px;
+margin: 5px 0;
+border: 0;
+border-radius: 5px;
+background: none;
+outline: none;
+border: none;
+line-height: 1;
+font-weight: 600;
+font-size: 1.1rem;
+color: #333;
+background-color: #f0f0f0
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+  transition: 1s;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #777;
+}
+
+button {
+  width: 110px;
+  height: 35px;
+  margin: 0 10px;
+  background-color: #5995fd;
+  border-radius: 30px;
+  border: 0;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #5995fd;
+}
+.image {
+  margin: 25% auto;
+  width: 100%;
+  transition: transform 1.1s ease-in-out;
+  transition-delay: 0.4s;
+  transition: 1s;
+  z-index:6;
+}
+.test {
+  display: grid;
+}
+
+.boss {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#alert {
+    color: blue;
+    font-size: large;
+    text-align: center;
+}

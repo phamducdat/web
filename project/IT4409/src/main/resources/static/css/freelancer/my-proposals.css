@@ -1,0 +1,14 @@
+#my-proposals-section-content {
+  padding: 16px;
+}
+
+table,
+td,
+th {
+  border: 1px solid grey;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}

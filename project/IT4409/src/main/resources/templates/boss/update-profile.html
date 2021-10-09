@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+  <link th:href="@{/css/boss/boss-profile.css}" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="header">
+  <nav>
+    <a th:href="@{/home/default}"><img th:src="@{/images/logo2.png}" alt="Logo"></a>
+    <div class="search-box">
+      <i class="fa fa-search" ></i>
+      <input type="search" class="search" placeholder="Search...">
+    </div>
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times menu" onclick="hideMenu()"></i>
+      <ul>
+        <li><a th:href="@{/home/default}">HOME</a></li>
+        <li><a th:href="@{/boss/about}">ABOUT</a></li>
+        <li><a th:href="@{/boss/see_all_post}">MY JOBS</a></li>
+        <li><a th:href="@{/boss/profile}">PROFILE</a></li>
+        <li><a href="/login">LOGOUT</a></li>
+      </ul>
+    </div>
+    <i class="fa fa-bars menu" onclick="showMenu()"></i>
+  </nav>
+
+  <div class="edit-profile-title">
+    <h1>Edit Profile</h1>
+  </div>
+  <div class="edit-profile-form">
+    <form role="form" th:action="@{/boss/profile}" method="post">
+      <div class="info" >
+        <h3 class="name">Full name</h3>
+        <input class="input" th:field="*{boss.fullname}" required></input>
+      </div>
+      <div class="info">
+        <h3 class="name">Phone number</h3>
+        <input class="input" th:field="*{boss.phone}" required></input >
+      </div>
+
+      <div class="info">
+        <h3 class="name">Company</h3>
+        <input class="input" th:field="*{boss.company}" required></input>
+      </div>
+      <div class="info">
+        <h3 class="name">Country</h3>
+        <input class="input" th:field="*{boss.country}" required></input>
+      </div>
+      <input class="hero-btn" type="submit" name="post" value="Update">
+    </form>
+  </div>
+</section>
+<!------------ Footer ---------------->
+
+<section class="footer">
+  <h4>About us</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco  nisi.</p>
+  <div class="icons">
+    <i class="fa fa-facebook" ></i>
+    <i class="fa fa-twitter" ></i>
+    <i class="fa fa-instagram" ></i>
+    <i class="fa fa-linkedin" ></i>
+  </div>
+  <p>Made with <i class="fa fa-heart-o" > by Group 3</i></p>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!------ JavaScript for Menu ----->
+
+<script>
+  var navLinks = document.getElementById("navLinks");
+  function showMenu() {
+    navLinks.style.display="block";
+  }
+  function hideMenu() {
+    navLinks.style.display="none";
+  }
+</script>
+
+</body>
+
+</html>

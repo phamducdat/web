@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+    <link th:href="@{/css/boss/boss-profile.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a th:href="@{/home/default}"><img th:src="@{/images/logo2.png}" alt="Logo"></a>
+        <div class="search-box">
+            <i class="fa fa-search" ></i>
+            <input type="search" class="search" placeholder="Search...">
+        </div>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times menu" onclick="hideMenu()"></i>
+            <ul>
+                <li><a th:href="@{/home/default}">HOME</a></li>
+                <li><a th:href="@{/boss/about}">ABOUT</a></li>
+                <li><a th:href="@{/boss/see_all_post}">MY JOBS</a></li>
+                <li><a th:href="@{/boss/profile}">PROFILE</a></li>
+                <li><a href="/login">LOGOUT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars menu" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="company">
+        <h1 th:text="${boss.company}"></h1>
+        <p>Company</p>
+    </div>
+    <div class="profile">
+        <h3>Email</h3>
+        <span th:text="${boss.email}"></span>
+        <br>
+        <h3>Name</h3>
+        <span th:text="${boss.fullname}"></span>
+        <br>
+        <h3>Phone</h3>
+        <span th:text="${boss.phone}"></span>
+        <br>
+        <h3>Country</h3>
+        <span th:text="${boss.country}"></span>
+        <br>
+        <div class="buttons-wrap">
+            <div class="edit-wrap">
+                <a th:href="@{/boss/change-profile}" class="edit">Edit</a>
+            </div>
+            <div class="jobs-wrap">
+                <a th:href="@{/boss/see_all_post}" class="jobs">All Jobs</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------ Footer ---------------->
+
+<section class="footer">
+    <h4>About us</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco  nisi.</p>
+    <div class="icons">
+        <i class="fa fa-facebook" ></i>
+        <i class="fa fa-twitter" ></i>
+        <i class="fa fa-instagram" ></i>
+        <i class="fa fa-linkedin" ></i>
+    </div>
+    <p>Made with <i class="fa fa-heart-o" > by Group 3</i></p>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!------ JavaScript for Menu ----->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+        navLinks.style.display="block";
+    }
+    function hideMenu() {
+        navLinks.style.display="none";
+    }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/freelancer::freelancer-fragment(
+    ~{::title},
+    ~{:: #job-details-static-resources},
+    ~{:: #job-details-section-header},
+    ~{:: #job-details-section-content},
+)}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Job details - ' + ${jobPost.title}"></title>
+
+    <!-- Các tài nguyên JS, CSS riêng của trang này -->
+    <th:block id="job-details-static-resources">
+        <link th:href="@{/css/job/job-details.css}" rel="stylesheet" />
+    </th:block>
+</head>
+<body>
+    <section class="section-header" id="job-details-section-header">
+        <div class="section-title" th:text="${jobPost.title}"></div>
+    </section>
+
+    <section class="section-content" id="job-details-section-content">
+
+        <div id="job-details">
+            <p th:text="${jobPost.description}"></p>
+            <p th:text="${jobPost.type}"></p>
+            <p th:text="${jobPost.budget}"></p>
+            <p th:text="${jobPost.expertiseLevel}"></p>
+            <p th:text="${jobPost.timeRequirement}"></p>
+        </div>     
+        
+        <div id="jobs-reactive">
+            <a class="button" th:href="@{'/find-work/recommended/' + ${jobPost.id} + '/create-proposal'}">
+                Submit a proposal
+            </a>
+            <button class="button">
+                <i class="far fa-heart"></i>
+                Save job
+            </button>
+        </div>
+    </section>
+</body>
+</html>

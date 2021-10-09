@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:fragment="freelancer-fragment (title, otherStaticResources, sectionHeader, sectionContent)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">My Jobs - Upwork</title>
+    <link th:href="@{/css/freelancer/my-jobs.css}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/freelancer/layout.css}" href="../../static/css/freelancer/layout.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common/table.css}" href="../../static/css/common/table.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/find-work.css}" href="../../static/css/find-work.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- Other javascript, css source files -->
+    <th:block th:replace="${otherStaticResources} ?: ~{}"></th:block>
+
+</head>
+
+<body>
+    <nav>
+        <div class="header">
+            <div class="container">
+                <header>
+                    <a th:href="@{/find-work}"><img class="logo" src="../../static/images/logo2.png"th:src="@{/images/logo2.png}" alt="Logo"></a>
+                    <ul>
+                        <li><a th:href="@{/find-work}"><span>Find Work</span></a></li>
+                        <li><a th:href="@{/f/home}"><span>My Jobs</span></a></li>
+                        <li><a th:href="@{/f/contracts}"><span>Contracts</span></a></li>
+                        <li><a th:href="@{/f/work-diary}"><span>Work Diary</span></a></li>
+                        <li><a th:href="@{/f/proposals}"><span>My Proposals</span></a></li>
+
+                    </ul>
+                    <div class="dropdown">
+                        <img class="profile" th:src="@{/images/default_image.jpeg}" src="../../static/images/default_image.jpeg">
+                        <div class="dropdown-content">
+                            <a href="/login">Sign Out</a>
+                            <a href="/my-profile">Profile</a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        </nav>
+
+    <main>
+        <div class="container">
+            <div th:insert="${sectionHeader} ?: ~{}"></div>
+            <div th:insert="${sectionContent} ?: ~{}"></div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

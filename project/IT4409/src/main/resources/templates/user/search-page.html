@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/search-page.css}">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <header class="main">
+            <a th:href="@{/find-work}"><img class="logo" src="../../static/images/logo2.png"th:src="@{/images/logo2.png}" alt="Logo"></a>
+            <div class="search-box-1">
+                <i class="fa fa-search" ></i>
+                <input type="search" class="search" id='header-search' placeholder="Search...">
+            </div>
+            <ul>
+                <li><a th:href="@{/find-work}"><span>Find Work</span></a></li>
+                <li><a th:href="@{/f/home}"><span>My Jobs</span></a></li>
+                <li><a th:href="@{/f/contracts}"><span>Contracts</span></a></li>
+                <li><a th:href="@{/work-diary}"><span>Work Diary</span></a></li>
+            </ul>
+            <div class="dropdown">
+                <img class="profile" th:src="@{/images/default_image.jpeg}" src="../../static/images/default_image.jpeg">
+                <div class="dropdown-content">
+                    <a href="/login">Sign Out</a>
+                    <a href="/my-profile">Update Profile</a>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="content">
+        <div class="main">
+            <div class="column left">
+                <h3>Filter By</h3>
+                <div class="filter">
+                    <div class="label">
+                        <strong>Experience Level</strong>
+                        <i class="fas fa-chevron-down collapsible"></i>
+                    </div>
+                    <div>
+                        <label class="container">All Level
+                            <input type="radio" onclick="search()" checked="checked" name="radio-level" value="">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Entry Level
+                            <input type="radio" onclick="search()" name="radio-level" value="entry">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Intermediate
+                            <input type="radio" name="radio-level" value="intermediate">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Expert
+                            <input type="radio" onclick="search()" name="radio-level" value="expert">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="label">
+                        <strong>Job Type</strong>
+                        <i class="fas fa-chevron-down collapsible"></i>
+                    </div>
+                    <div>
+                        <label class="container">All Type
+                            <input type="radio" onclick="search()" checked="checked" name="radio-type" value="">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Fixed
+                            <input type="radio" onclick="search()" name="radio-type" value="fixed">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Hourly
+                            <input type="radio" onclick="search()" name="radio-type" value="hourly">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="label">
+                        <strong>Budget</strong>
+                        <i class="fas fa-chevron-down collapsible"></i>
+                    </div>
+                    <div>
+                        <label class="container">All Range
+                            <input onclick="search()" type="radio" checked="checked" name="radio-budget" value="">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Less than $50
+                            <input onclick="search()" type="radio" name="radio-budget" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">$50 - $100
+                            <input onclick="search()" type="radio" name="radio-budget" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">$100+
+                            <input type="radio" onclick="search()" name="radio-budget" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column right">
+                <div class="block example">
+                    <input id="search" type="text" placeholder="Search.." name="search" th:value="*{q}">
+                    <button type="button" onclick="search()"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="block">
+                    <div style="display: inline-block">
+                        <i class="fas fa-check"></i>
+                        <strong id="number-job-found">0</strong>
+                        <span>jobs found</span>
+                    </div>
+                    <div style="display: inline-block; float: right;">
+                        <label for="sort"><strong>Sort:</strong></label>
+                        <select name="sorts" id="sort" style="padding: 4px; border-radius: 5px; background-color: #fff;" onchange="search()">
+                            <option value="default">Newest</option>
+                            <option value="budget">Budget</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="block" id="listJobs">
+                </div>
+                <div class="more block" id="load-more">
+                    <button onclick="getJobs()">Load More Jobs</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <h4>About us</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco  nisi.</p>
+        <div class="icons">
+            <i class="fa fa-facebook" ></i>
+            <i class="fa fa-twitter" ></i>
+            <i class="fa fa-instagram" ></i>
+            <i class="fa fa-linkedin" ></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o" > by GROUP 3</i></p>
+    </footer>
+    <script th:src="@{/js/search-page.js}">
+
+    </script>
+</body>
+</html>

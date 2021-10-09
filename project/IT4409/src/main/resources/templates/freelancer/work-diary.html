@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/freelancer::freelancer-fragment(
+    ~{::title},
+    ~{:: #work-diary-static-resources},
+    ~{:: #work-diary-section-header},
+    ~{:: #work-diary-section-content},
+)}">
+
+<head>
+    <title>Word diary</title>
+
+    <!-- Các tài nguyên JS, CSS riêng của trang này -->
+    <th:block id="work-diary-static-resources">
+    </th:block>
+
+</head>
+
+<body>
+    <section class="section-header" id="work-diary-section-header">
+        <div class="section-title">Work diary</div>
+    </section>
+
+    <section class="section-content" id="work-diary-section-content">
+        <div class="section-content-body">
+            <div class="alert">
+                <span class="padding-right-2 margin-y-auto" style="border-right: 1px solid #e0e0e0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-exclamation-circle-fill warning" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                </span>
+                <div class="padding-left-2">
+                    <p>Currently you have no active jobs.</p>
+                    <p>Please use find <a href="#">work tab</a>, to find and apply to new jobs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

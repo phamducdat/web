@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Post</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+  <link th:href="@{/css/boss/job-form.css}" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="header">
+    <nav>
+      <a th:href="@{/home/default}"><img th:src="@{/images/logo2.png}" alt="Logo"></a>
+      <div class="search-box">
+        <i class="fa fa-search" ></i>
+        <input type="search" class="search" placeholder="Search...">
+      </div>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times menu" onclick="hideMenu()"></i>
+        <ul>
+          <li><a th:href="@{/home/default}">HOME</a></li>
+          <li><a th:href="@{/boss/about}">ABOUT</a></li>
+          <li><a th:href="@{/boss/see_all_post}">MY JOBS</a></li>
+          <li><a th:href="@{/boss/profile}">PROFILE</a></li>
+          <li><a href="/login">LOGOUT</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars menu" onclick="showMenu()"></i>
+    </nav>
+
+    <!------------------------------------------------jobPost-post -------------------------------------------->
+
+    <div class="job-form">
+      <h1>Job Form</h1>
+    </div>
+    <div class="form-main">
+      <form role="form" method="POST" th:action="@{/boss/review-post}">
+        <div id="title" >
+          <h3 class="name">Title</h3>
+          <input type="text" class="title" th:field="${jobPost.title}" placeholder="Job Name" required>
+        </div>
+        <div id="description">
+          <h3 class="name">Description</h3>
+          <textarea class="description" th:field="${jobPost.description}" placeholder="Description" required></textarea>
+        </div>
+
+        <div id="type">
+          <h3 class="name">Paid Type</h3>
+          <select class="type" th:field="${jobPost.type}">
+            <option value="fixed">Fixed</option>
+            <option value="hourly">Hourly</option>
+          </select>
+        </div>
+        <div id="budget">
+          <h3 class="name">Budget</h3>
+          <input type="number" class="budget" required th:field="${jobPost.budget}" placeholder="According to Paid Type" >
+        </div>
+        <div id="expertiseLevel">
+          <h3 class="name">Expertise Level</h3>
+          <select class="expertiseLevel" th:field="${jobPost.expertiseLevel}" >
+            <option value="entry-level">Entry level</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+          </select>
+        </div>
+        <div id="skill">
+          <h3 class="name">Skill</h3>
+          <select class="skill" th:field="${jobPost.skill}" >
+            <option value="java">Java</option>
+            <option value="windows">Windows</option>
+            <option value="c#">C#</option>
+            <option value="python">Python</option>
+            <option value="ruby">Ruby</option>
+            <option value="desktopApplication">Desktop Application</option>
+            <option value="php">PHP</option>
+            <option value="linux">Linux</option>
+            <option value="swing">Swing</option>
+            <option value="apacheMaven">Apache Maven</option>
+          </select>
+        </div>
+
+        <div id="time-requirement" >
+          <h3 class="name">Required Time</h3>
+          <select class="timeRequirement" th:field="${jobPost.timeRequirement}" required>
+            <option value="more-than-30-hrs/week">More than 30 hrs/week</option>
+            <option value="less-than-30-hrs/week">Less than 30 hrs/week</option>
+          </select>
+        </div>
+        <input class="hero-btn" type="submit" name="post" value="Post">
+      </form>
+    </div>
+  </section>
+
+
+   <footer class="footer">
+      <h4>About us</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco  nisi.</p>
+      <div class="icons">
+          <i class="fa fa-facebook" ></i>
+          <i class="fa fa-twitter" ></i>
+          <i class="fa fa-instagram" ></i>
+          <i class="fa fa-linkedin" ></i>
+      </div>
+      <p>Made with <i class="fa fa-heart-o" > by GROUP 3</i></p>
+  </footer>
+
+
+
+<!---------------- Java Script ------------->
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/freelancer::freelancer-fragment(
+    ~{::title},
+    ~{:: #my-proposals-static-resources},
+    ~{:: #my-proposals-section-header},
+    ~{:: #my-proposals-section-content},
+)}">
+<head>
+    <meta charset="UTF-8">
+    <title>My proposals</title>
+
+    <!-- Các tài nguyên JS, CSS riêng của trang này -->
+    <th:block id="my-proposals-static-resources">
+        <link th:href="@{/css/freelancer/my-proposals.css}" rel="stylesheet" />
+    </th:block>
+</head>
+<body>
+    <section class="section-header" id="my-proposals-section-header">
+        <div class="section-title" th:text="'My proposals'"></div>
+    </section>
+
+    <section class="section-content" id="my-proposals-section-content">
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Estimated budget</th>
+                <th>Estimated time</th>
+                <th>Description</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                <tr th:each="proposal: ${proposals}">
+                    <td th:text="${proposal.id}"></td>
+                    <td th:text="${proposal.budget}"></td>
+                    <td th:text="${proposal.timeRequirement}"></td>
+                    <td th:text="${proposal.description}"></td>
+                    <td th:text="${proposal.status} ? 'Accepted' : 'Non-Accepted'"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

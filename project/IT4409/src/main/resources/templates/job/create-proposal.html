@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/freelancer::freelancer-fragment(
+    ~{::title},
+    ~{:: #create-proposal-static-resources},
+    ~{:: #create-proposal-section-header},
+    ~{:: #create-proposal-section-content},
+)}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Create proposal - ' + ${jobPost.title}"></title>
+
+    <!-- Các tài nguyên JS, CSS riêng của trang này -->
+    <th:block id="create-proposal-static-resources">
+        <link th:href="@{/css/job/create-proposal.css}" rel="stylesheet" />
+    </th:block>
+</head>
+<body>
+    <section class="section-header" id="create-proposal-section-header">
+        <div class="section-title" th:text="'Write your proposal for ' + ${jobPost.title}"></div>
+    </section>
+
+    <section class="section-content" id="create-proposal-section-content">
+        <form action="#" method="post" th:action="@{/find-work/recommended/} + ${jobPost.id} + @{/proposals}" th:object="${proposal}">
+            <div class="form-group">
+                <label for="budget">Offered Budget</label>
+                <input type="number" id="budget" name="budget" class="form-control" min="0" placeholder="Type your offered budget ..." th:field="*{budget}" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="timeRequirement">Time requirement</label>
+                <input type="text" id="timeRequirement" name="timeRequirement" class="form-control" min="0" placeholder="Type your offered time ..." th:field="*{timeRequirement}">
+            </div>
+            <div class="form-group">
+                <label for="description">Describe your proposal</label>
+                <textarea id="description" name="offer" cols="30" rows="10" class="form-control" th:field="*{description}"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

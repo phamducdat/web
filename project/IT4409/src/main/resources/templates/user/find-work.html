@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Job Feed</title>
+    <link rel="stylesheet" href="../../static/css/find-work.css" th:href="@{/css/find-work.css}">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+    <div class="header">
+        <div class="container">
+            <header>
+                <a th:href="@{/find-work}"><img class="logo" src="../../static/images/logo2.png"th:src="@{/images/logo2.png}" alt="Logo"></a>
+                <ul>
+                    <li><a th:href="@{/find-work}"><span>Find Work</span></a></li>
+                    <li><a th:href="@{/f/home}"><span>My Jobs</span></a></li>
+                    <li><a th:href="@{/f/contracts}"><span>Contracts</span></a></li>
+                    <li><a th:href="@{/f/work-diary}"><span>Work Diary</span></a></li>
+                    <li><a th:href="@{/f/proposals}"><span>My Proposals</span></a></li>
+                </ul>
+                <div class="dropdown">
+                    <img class="profile" th:src="@{/images/default_image.jpeg}" src="../../static/images/default_image.jpeg">
+                    <div class="dropdown-content">
+                        <a href="/login">Sign Out</a>
+                        <a href="/my-profile">Update Profile</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    </nav>
+    <div class="wrapper">
+        <div class="container main">
+            <h1 class="typo">Find Work</h1>
+            <div class="search-form" id="container-search">
+                <form id="search-form">
+                    <div class="search-box">
+                        <input type="search" id="search" name="q" maxlength="200" class="search-input" placeholder="Search for jobs"
+                        onkeyup="getJobSearchResultsViaAjax()">
+                        <button type="button" class="search-button" onclick="goToSearch()"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+                <div class="search-result" id="search-result">
+                    <div class="row">
+                        <i class="fas fa-search" style="color: #A9A9A9"></i>&nbsp;&nbsp;
+                        <a href="#">Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <ul>
+                    <li><a id="my-feed" onclick="changColor(this.id)" style="color: #14a800;">My Feed</a></li>
+<!--                    <li><a id="matches" onclick="changColor(this.id)">Best Matches</a></li>-->
+                </ul>
+                <div>
+                    <h4>Recent Searches</h4>
+                    <ul id="recent-searches">
+                    </ul>
+                </div>
+            </div>
+            <div class="center" id="center">
+                <div class="my-feed">
+                    <h2>My Feed</h2>
+                </div>
+            </div>
+            <div class="right">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fupwork%2Fposts%2F4006421769448146&show_text=true&width=170" width="170" height="524" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FVietnamWorksFanpage%2Fposts%2F10157970582731471&show_text=true&width=170" width="170" height="428" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="more job" id="load-more">
+                <button onclick="getJobs()">Load More Jobs</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <h4>About us</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco  nisi.</p>
+        <div class="icons">
+            <i class="fa fa-facebook" ></i>
+            <i class="fa fa-twitter" ></i>
+            <i class="fa fa-instagram" ></i>
+            <i class="fa fa-linkedin" ></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o" > by GROUP 3</i></p>
+    </footer>
+    <script type="text/javascript" th:src="@{/js/find-work.js}">
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,769 @@
+2021-05-31 07:07:04.665  INFO 6944 --- [           main]  com.hust.baseweb.BasewebApplication      : Starting BasewebApplication on DESKTOP-ASUK94V with PID 6944 (D:\Project\baseweb\target\classes started by phamd in D:\Education\IT4409-124205\Project\project)
+2021-05-31 07:07:04.666 DEBUG 6944 --- [           main]  com.hust.baseweb.BasewebApplication      : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2021-05-31 07:07:04.667  INFO 6944 --- [           main]  com.hust.baseweb.BasewebApplication      : No active profile set, falling back to default profiles: default
+2021-05-31 07:07:04.709  WARN 6944 --- [kground-preinit]  o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-05-31 07:07:07.194  INFO 6944 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-31 07:07:07.195  INFO 6944 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-05-31 07:07:07.410  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.sequenceid.InvoiceSequenceIdRepo.
+2021-05-31 07:07:07.411  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.sequenceid.PaymentSequenceIdRepo.
+2021-05-31 07:07:07.417  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryPlanRepo.
+2021-05-31 07:07:07.418  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryTripDetailRepo.
+2021-05-31 07:07:07.420  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryTripRepo.
+2021-05-31 07:07:07.421  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.PPartyDriverRepo.
+2021-05-31 07:07:07.422  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.PartyDriverRepo.
+2021-05-31 07:07:07.424  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentItemDeliveryPlanRepo.
+2021-05-31 07:07:07.425  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentItemRepo.
+2021-05-31 07:07:07.426  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentRepo.
+2021-05-31 07:07:07.439  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleDeliveryPlanRepo.
+2021-05-31 07:07:07.441  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleLocationPriorityRepo.
+2021-05-31 07:07:07.442  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleMaintenanceHistoryRepo.
+2021-05-31 07:07:07.443  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleRepo.
+2021-05-31 07:07:07.444  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleTypeRepo.
+2021-05-31 07:07:07.446  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.DeliveryTripDetailStatusRepo.
+2021-05-31 07:07:07.447  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.DeliveryTripStatusRepo.
+2021-05-31 07:07:07.449  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.ShipmentItemStatusRepo.
+2021-05-31 07:07:07.519  INFO 6944 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 316ms. Found 33 repository interfaces.
+2021-05-31 07:07:08.163  INFO 6944 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-31 07:07:08.166  INFO 6944 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-05-31 07:07:08.296  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceItemRepo.
+2021-05-31 07:07:08.298  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceRepo.
+2021-05-31 07:07:08.300  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceStatusRepo.
+2021-05-31 07:07:08.301  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.OrderItemBillingRepo.
+2021-05-31 07:07:08.303  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.PaymentApplicationRepo.
+2021-05-31 07:07:08.304  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.PaymentRepo.
+2021-05-31 07:07:08.403  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.repo.mongodb.TeacherRepo.
+2021-05-31 07:07:08.404  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.suggesttimetable.repo.IClassMongoRepo.
+2021-05-31 07:07:08.405  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.suggesttimetable.repo.ICourseMongoRepo.
+2021-05-31 07:07:08.426  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.gismap.repo.StreetRepo.
+2021-05-31 07:07:08.495  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.CustomerRevenueRepo.
+2021-05-31 07:07:08.496  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.OrderHeaderRemovedRepo.
+2021-05-31 07:07:08.497  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.ProductRevenueRepo.
+2021-05-31 07:07:08.498  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.TotalRevenueRepo.
+2021-05-31 07:07:08.583  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.CustomerRepository.
+2021-05-31 07:07:08.584  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.FacilityRepository.
+2021-05-31 07:07:08.587  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.InventoryItemDetailRepository.
+2021-05-31 07:07:08.588  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.InventoryItemRepository.
+2021-05-31 07:07:08.589  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.OrderItemRepository.
+2021-05-31 07:07:08.591  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.OrganizationRepository.
+2021-05-31 07:07:08.592  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.PersonRepository.
+2021-05-31 07:07:08.593  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductFacilityRepository.
+2021-05-31 07:07:08.594  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductPriceRepository.
+2021-05-31 07:07:08.595  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductRepository.
+2021-05-31 07:07:08.596  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.PurchaseOrderRepository.
+2021-05-31 07:07:08.598  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.SalesOrderRepository.
+2021-05-31 07:07:08.599  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.UserLoginCustomerRepository.
+2021-05-31 07:07:08.600  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.UserLoginFacilityRepository.
+2021-05-31 07:07:08.610  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.SolverConfigParamRepo.
+2021-05-31 07:07:08.612  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportCustomerRepo.
+2021-05-31 07:07:08.613  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportDriverRepo.
+2021-05-31 07:07:08.614  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportFacilityRepo.
+2021-05-31 07:07:08.700  INFO 6944 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.webcam.repository.WebcamVideoRepository.
+2021-05-31 07:07:09.096  INFO 6944 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 922ms. Found 173 repository interfaces.
+2021-05-31 07:07:09.851  INFO 6944 --- [           main]  trationDelegate$BeanPostProcessorChecker : Bean 'asyncConfiguration' of type [com.hust.baseweb.config.AsyncConfiguration$$EnhancerBySpringCGLIB$$7792d293] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-31 07:07:10.034  INFO 6944 --- [           main]  trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-31 07:07:10.644  INFO 6944 --- [           main]  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-31 07:07:10.662  INFO 6944 --- [           main]  o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8081"]
+2021-05-31 07:07:10.663  INFO 6944 --- [           main]  o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-31 07:07:10.663  INFO 6944 --- [           main]  org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-05-31 07:07:10.812  INFO 6944 --- [           main]  o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2021-05-31 07:07:10.813  INFO 6944 --- [           main]  o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6056 ms
+2021-05-31 07:07:11.114  INFO 6944 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-31 07:07:11.310  INFO 6944 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-31 07:07:11.548  INFO 6944 --- [           main]  o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-31 07:07:11.726  INFO 6944 --- [           main]  org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2021-05-31 07:07:12.080  INFO 6944 --- [           main]  o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-05-31 07:07:12.297  INFO 6944 --- [           main]  org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-05-31 07:07:15.329  INFO 6944 --- [           main]  o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-31 07:07:15.340  INFO 6944 --- [           main]  j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-31 07:07:16.074 DEBUG 6944 --- [           main]  c.h.baseweb.config.AsyncConfiguration    : Creating Async Task Executor
+2021-05-31 07:07:16.101  INFO 6944 --- [           main]  o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-05-31 07:07:16.621  INFO 6944 --- [           main]  org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017, localhost:27018, localhost:27019], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-05-31 07:07:16.622  INFO 6944 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2021-05-31 07:07:16.665  INFO 6944 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27018 to client view of cluster
+2021-05-31 07:07:16.667  INFO 6944 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27019 to client view of cluster
+2021-05-31 07:07:16.690  INFO 6944 --- [localhost:27019]  org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27019
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:669)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:645)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2021-05-31 07:07:16.690  INFO 6944 --- [localhost:27018]  org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27018
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:669)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:645)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2021-05-31 07:07:16.722  INFO 6944 --- [localhost:27017]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:7}] to localhost:27017
+2021-05-31 07:07:16.730  INFO 6944 --- [localhost:27017]  org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5170500}
+2021-05-31 07:07:16.730  INFO 6944 --- [localhost:27017]  org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2021-05-31 07:07:16.731 ERROR 6944 --- [localhost:27017]  org.mongodb.driver.cluster               : Expecting a single STANDALONE, but found more than one.  Removing localhost:27017 from client view of cluster.
+2021-05-31 07:07:16.842  WARN 6944 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:07:16.842  WARN 6944 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:07:16.884  WARN 6944 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:07:16.885  WARN 6944 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:08:15.226  INFO 15528 --- [           main]  com.hust.baseweb.BasewebApplication      : Starting BasewebApplication on DESKTOP-ASUK94V with PID 15528 (D:\Project\baseweb\target\classes started by phamd in D:\Education\IT4409-124205\Project\project)
+2021-05-31 07:08:15.227 DEBUG 15528 --- [           main]  com.hust.baseweb.BasewebApplication      : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2021-05-31 07:08:15.228  INFO 15528 --- [           main]  com.hust.baseweb.BasewebApplication      : No active profile set, falling back to default profiles: default
+2021-05-31 07:08:15.269  WARN 15528 --- [kground-preinit]  o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-05-31 07:08:16.907  INFO 15528 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-31 07:08:16.908  INFO 15528 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-05-31 07:08:17.067  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.sequenceid.InvoiceSequenceIdRepo.
+2021-05-31 07:08:17.069  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.sequenceid.PaymentSequenceIdRepo.
+2021-05-31 07:08:17.071  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryPlanRepo.
+2021-05-31 07:08:17.073  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryTripDetailRepo.
+2021-05-31 07:08:17.074  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryTripRepo.
+2021-05-31 07:08:17.075  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.PPartyDriverRepo.
+2021-05-31 07:08:17.076  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.PartyDriverRepo.
+2021-05-31 07:08:17.078  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentItemDeliveryPlanRepo.
+2021-05-31 07:08:17.079  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentItemRepo.
+2021-05-31 07:08:17.080  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentRepo.
+2021-05-31 07:08:17.088  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleDeliveryPlanRepo.
+2021-05-31 07:08:17.089  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleLocationPriorityRepo.
+2021-05-31 07:08:17.090  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleMaintenanceHistoryRepo.
+2021-05-31 07:08:17.091  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleRepo.
+2021-05-31 07:08:17.092  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleTypeRepo.
+2021-05-31 07:08:17.092  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.DeliveryTripDetailStatusRepo.
+2021-05-31 07:08:17.094  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.DeliveryTripStatusRepo.
+2021-05-31 07:08:17.095  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.ShipmentItemStatusRepo.
+2021-05-31 07:08:17.169  INFO 15528 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 255ms. Found 33 repository interfaces.
+2021-05-31 07:08:17.646  INFO 15528 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-31 07:08:17.647  INFO 15528 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-05-31 07:08:17.763  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceItemRepo.
+2021-05-31 07:08:17.765  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceRepo.
+2021-05-31 07:08:17.766  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceStatusRepo.
+2021-05-31 07:08:17.767  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.OrderItemBillingRepo.
+2021-05-31 07:08:17.768  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.PaymentApplicationRepo.
+2021-05-31 07:08:17.769  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.PaymentRepo.
+2021-05-31 07:08:17.847  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.repo.mongodb.TeacherRepo.
+2021-05-31 07:08:17.848  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.suggesttimetable.repo.IClassMongoRepo.
+2021-05-31 07:08:17.849  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.suggesttimetable.repo.ICourseMongoRepo.
+2021-05-31 07:08:17.865  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.gismap.repo.StreetRepo.
+2021-05-31 07:08:17.924  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.CustomerRevenueRepo.
+2021-05-31 07:08:17.925  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.OrderHeaderRemovedRepo.
+2021-05-31 07:08:17.926  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.ProductRevenueRepo.
+2021-05-31 07:08:17.927  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.TotalRevenueRepo.
+2021-05-31 07:08:17.994  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.CustomerRepository.
+2021-05-31 07:08:17.995  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.FacilityRepository.
+2021-05-31 07:08:17.996  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.InventoryItemDetailRepository.
+2021-05-31 07:08:17.997  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.InventoryItemRepository.
+2021-05-31 07:08:17.998  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.OrderItemRepository.
+2021-05-31 07:08:17.999  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.OrganizationRepository.
+2021-05-31 07:08:18.000  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.PersonRepository.
+2021-05-31 07:08:18.002  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductFacilityRepository.
+2021-05-31 07:08:18.004  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductPriceRepository.
+2021-05-31 07:08:18.005  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductRepository.
+2021-05-31 07:08:18.006  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.PurchaseOrderRepository.
+2021-05-31 07:08:18.007  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.SalesOrderRepository.
+2021-05-31 07:08:18.008  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.UserLoginCustomerRepository.
+2021-05-31 07:08:18.009  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.UserLoginFacilityRepository.
+2021-05-31 07:08:18.017  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.SolverConfigParamRepo.
+2021-05-31 07:08:18.018  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportCustomerRepo.
+2021-05-31 07:08:18.019  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportDriverRepo.
+2021-05-31 07:08:18.020  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportFacilityRepo.
+2021-05-31 07:08:18.063  INFO 15528 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.webcam.repository.WebcamVideoRepository.
+2021-05-31 07:08:18.376  INFO 15528 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 725ms. Found 173 repository interfaces.
+2021-05-31 07:08:18.983  INFO 15528 --- [           main]  trationDelegate$BeanPostProcessorChecker : Bean 'asyncConfiguration' of type [com.hust.baseweb.config.AsyncConfiguration$$EnhancerBySpringCGLIB$$ef8eb80e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-31 07:08:19.095  INFO 15528 --- [           main]  trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-31 07:08:19.532  INFO 15528 --- [           main]  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-31 07:08:19.545  INFO 15528 --- [           main]  o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8081"]
+2021-05-31 07:08:19.545  INFO 15528 --- [           main]  o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-31 07:08:19.545  INFO 15528 --- [           main]  org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-05-31 07:08:19.669  INFO 15528 --- [           main]  o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2021-05-31 07:08:19.669  INFO 15528 --- [           main]  o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4389 ms
+2021-05-31 07:08:19.885  INFO 15528 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-31 07:08:20.041  INFO 15528 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-31 07:08:20.199  INFO 15528 --- [           main]  o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-31 07:08:20.321  INFO 15528 --- [           main]  org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2021-05-31 07:08:20.530  INFO 15528 --- [           main]  o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-05-31 07:08:20.668  INFO 15528 --- [           main]  org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-05-31 07:08:22.775  INFO 15528 --- [           main]  o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-31 07:08:22.785  INFO 15528 --- [           main]  j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-31 07:08:23.242 DEBUG 15528 --- [           main]  c.h.baseweb.config.AsyncConfiguration    : Creating Async Task Executor
+2021-05-31 07:08:23.258  INFO 15528 --- [           main]  o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-05-31 07:08:23.660  INFO 15528 --- [           main]  org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017, localhost:27018, localhost:27019], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-05-31 07:08:23.661  INFO 15528 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2021-05-31 07:08:23.694  INFO 15528 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27018 to client view of cluster
+2021-05-31 07:08:23.695  INFO 15528 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27019 to client view of cluster
+2021-05-31 07:08:23.734  INFO 15528 --- [localhost:27018]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27018
+2021-05-31 07:08:23.734  INFO 15528 --- [localhost:27017]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:8}] to localhost:27017
+2021-05-31 07:08:23.734  INFO 15528 --- [localhost:27019]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:1}] to localhost:27019
+2021-05-31 07:08:23.741  INFO 15528 --- [localhost:27018]  org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27018, type=REPLICA_SET_GHOST, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4544300, setName='null', canonicalAddress=null, hosts=[], passives=[], arbiters=[], primary='null', tagSet=TagSet{[]}, electionId=null, setVersion=null, lastWriteDate=null, lastUpdateTimeNanos=341778263410400}
+2021-05-31 07:08:23.741  INFO 15528 --- [localhost:27017]  org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4361100}
+2021-05-31 07:08:23.742  INFO 15528 --- [localhost:27019]  org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27019, type=REPLICA_SET_GHOST, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6747600, setName='null', canonicalAddress=null, hosts=[], passives=[], arbiters=[], primary='null', tagSet=TagSet{[]}, electionId=null, setVersion=null, lastWriteDate=null, lastUpdateTimeNanos=341778264354000}
+2021-05-31 07:08:23.743  INFO 15528 --- [localhost:27017]  org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2021-05-31 07:08:23.744 ERROR 15528 --- [localhost:27017]  org.mongodb.driver.cluster               : Expecting a single STANDALONE, but found more than one.  Removing localhost:27017 from client view of cluster.
+2021-05-31 07:08:23.808  WARN 15528 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:08:23.808  WARN 15528 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:08:23.828  WARN 15528 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:08:23.828  WARN 15528 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:08:26.757  WARN 15528 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:08:26.757  WARN 15528 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:08:26.757  WARN 15528 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:08:26.760  WARN 15528 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:08:26.761  WARN 15528 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:08:26.761  WARN 15528 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:08:28.131  INFO 15528 --- [           main]  o.s.c.fs.io.FileSystemResourceLoader     : Defaulting filesystem root to D:\Education\IT4409-124205\Project\project
+2021-05-31 07:08:28.260  WARN 15528 --- [           main]  JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-31 07:08:28.862  WARN 15528 --- [           main]  .m.c.i.MongoPersistentEntityIndexCreator : Automatic index creation will be disabled by default as of Spring Data MongoDB 3.x.
+	Please use 'MongoMappingContext#setAutoIndexCreation(boolean)' or override 'MongoConfigurationSupport#autoIndexCreation()' to be explicit.
+	However, we recommend setting up indices manually in an application ready block. You may use index derivation there as well.
+
+	> -----------------------------------------------------------------------------------------
+	> @EventListener(ApplicationReadyEvent.class)
+	> public void initIndicesAfterStartup() {
+	>
+	>     IndexOperations indexOps = mongoTemplate.indexOps(DomainType.class);
+	>
+	>     IndexResolver resolver = new MongoPersistentEntityIndexResolver(mongoMappingContext);
+	>     resolver.resolveIndexFor(DomainType.class).forEach(indexOps::ensureIndex);
+	> }
+	> -----------------------------------------------------------------------------------------
+
+2021-05-31 07:08:28.885  INFO 15528 --- [           main]  org.mongodb.driver.cluster               : Cluster description not yet available. Waiting for 30000 ms before timing out
+2021-05-31 07:08:58.898  INFO 15528 --- [           main]  o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-05-31 07:08:58.904  WARN 15528 --- [           main]  o.a.c.loader.WebappClassLoaderBase       : The web application [api] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@16/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@16/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@16/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1661)
+ java.base@16/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@16/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@16/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1056)
+ java.base@16/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1116)
+ java.base@16/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+ java.base@16/java.lang.Thread.run(Thread.java:831)
+2021-05-31 07:08:58.905  WARN 15528 --- [           main]  o.a.c.loader.WebappClassLoaderBase       : The web application [api] appears to have started a thread named [cluster-ClusterId{value='60b428f7e8d3f31c551e2ec8', description='null'}-localhost:27018] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@16/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:217)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157)
+ java.base@16/java.lang.Thread.run(Thread.java:831)
+2021-05-31 07:08:58.905  WARN 15528 --- [           main]  o.a.c.loader.WebappClassLoaderBase       : The web application [api] appears to have started a thread named [cluster-ClusterId{value='60b428f7e8d3f31c551e2ec8', description='null'}-localhost:27019] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@16/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:217)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157)
+ java.base@16/java.lang.Thread.run(Thread.java:831)
+2021-05-31 07:08:58.915  INFO 15528 --- [           main]  ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-05-31 07:08:58.918 ERROR 15528 --- [           main]  o.s.boot.SpringApplication               : Application run failed
+org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27018, type=REPLICA_SET_GHOST, roundTripTime=1.1 ms, state=CONNECTED}, {address=localhost:27019, type=REPLICA_SET_GHOST, roundTripTime=1.0 ms, state=CONNECTED}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27018, type=REPLICA_SET_GHOST, roundTripTime=1.1 ms, state=CONNECTED}, {address=localhost:27019, type=REPLICA_SET_GHOST, roundTripTime=1.0 ms, state=CONNECTED}]
+	at org.springframework.data.mongodb.core.MongoExceptionTranslator.translateExceptionIfPossible(MongoExceptionTranslator.java:90)
+	at org.springframework.data.mongodb.core.MongoTemplate.potentiallyConvertRuntimeException(MongoTemplate.java:2902)
+	at org.springframework.data.mongodb.core.MongoTemplate.execute(MongoTemplate.java:587)
+	at org.springframework.data.mongodb.core.DefaultIndexOperations.execute(DefaultIndexOperations.java:214)
+	at org.springframework.data.mongodb.core.DefaultIndexOperations.ensureIndex(DefaultIndexOperations.java:121)
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:158)
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:148)
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:130)
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:114)
+	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:54)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.context.support.AbstractApplicationContext.registerListeners(AbstractApplicationContext.java:841)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:547)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.hust.baseweb.BasewebApplication.main(BasewebApplication.java:11)
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=localhost:27018, type=REPLICA_SET_GHOST, roundTripTime=1.1 ms, state=CONNECTED}, {address=localhost:27019, type=REPLICA_SET_GHOST, roundTripTime=1.0 ms, state=CONNECTED}]
+	at com.mongodb.internal.connection.BaseCluster.getDescription(BaseCluster.java:182)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.getDescription(AbstractMultiServerCluster.java:54)
+	at com.mongodb.client.internal.MongoClientDelegate.getConnectedClusterDescription(MongoClientDelegate.java:145)
+	at com.mongodb.client.internal.MongoClientDelegate.createClientSession(MongoClientDelegate.java:100)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.getClientSession(MongoClientDelegate.java:277)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:201)
+	at com.mongodb.client.internal.MongoCollectionImpl.executeCreateIndexes(MongoCollectionImpl.java:886)
+	at com.mongodb.client.internal.MongoCollectionImpl.createIndexes(MongoCollectionImpl.java:869)
+	at com.mongodb.client.internal.MongoCollectionImpl.createIndexes(MongoCollectionImpl.java:864)
+	at com.mongodb.client.internal.MongoCollectionImpl.createIndex(MongoCollectionImpl.java:849)
+	at org.springframework.data.mongodb.core.DefaultIndexOperations.lambda$ensureIndex$0(DefaultIndexOperations.java:131)
+	at org.springframework.data.mongodb.core.MongoTemplate.execute(MongoTemplate.java:585)
+	... 20 common frames omitted
+2021-05-31 07:08:59.057  INFO 15528 --- [           main]  o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'taskExecutor'
+2021-05-31 07:08:59.086  INFO 15528 --- [           main]  j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-31 07:08:59.089  INFO 15528 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-31 07:08:59.093  INFO 15528 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-31 07:12:59.206  WARN 11840 --- [kground-preinit]  o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-05-31 07:12:59.210  INFO 11840 --- [           main]  com.hust.baseweb.BasewebApplication      : Starting BasewebApplication on DESKTOP-ASUK94V with PID 11840 (D:\Project\baseweb\target\classes started by phamd in D:\Education\IT4409-124205\Project\project)
+2021-05-31 07:12:59.211 DEBUG 11840 --- [           main]  com.hust.baseweb.BasewebApplication      : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2021-05-31 07:12:59.212  INFO 11840 --- [           main]  com.hust.baseweb.BasewebApplication      : No active profile set, falling back to default profiles: default
+2021-05-31 07:13:01.169  INFO 11840 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-31 07:13:01.170  INFO 11840 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-05-31 07:13:01.326  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.sequenceid.InvoiceSequenceIdRepo.
+2021-05-31 07:13:01.328  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.sequenceid.PaymentSequenceIdRepo.
+2021-05-31 07:13:01.333  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryPlanRepo.
+2021-05-31 07:13:01.335  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryTripDetailRepo.
+2021-05-31 07:13:01.337  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.DeliveryTripRepo.
+2021-05-31 07:13:01.338  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.PPartyDriverRepo.
+2021-05-31 07:13:01.339  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.PartyDriverRepo.
+2021-05-31 07:13:01.341  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentItemDeliveryPlanRepo.
+2021-05-31 07:13:01.343  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentItemRepo.
+2021-05-31 07:13:01.344  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.ShipmentRepo.
+2021-05-31 07:13:01.355  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleDeliveryPlanRepo.
+2021-05-31 07:13:01.356  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleLocationPriorityRepo.
+2021-05-31 07:13:01.357  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleMaintenanceHistoryRepo.
+2021-05-31 07:13:01.359  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleRepo.
+2021-05-31 07:13:01.360  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.VehicleTypeRepo.
+2021-05-31 07:13:01.362  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.DeliveryTripDetailStatusRepo.
+2021-05-31 07:13:01.364  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.DeliveryTripStatusRepo.
+2021-05-31 07:13:01.366  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.status.ShipmentItemStatusRepo.
+2021-05-31 07:13:01.458  INFO 11840 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 282ms. Found 33 repository interfaces.
+2021-05-31 07:13:01.980  INFO 11840 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-31 07:13:01.982  INFO 11840 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-05-31 07:13:02.116  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceItemRepo.
+2021-05-31 07:13:02.118  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceRepo.
+2021-05-31 07:13:02.119  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.InvoiceStatusRepo.
+2021-05-31 07:13:02.121  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.OrderItemBillingRepo.
+2021-05-31 07:13:02.122  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.PaymentApplicationRepo.
+2021-05-31 07:13:02.124  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.accounting.repo.PaymentRepo.
+2021-05-31 07:13:02.223  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.repo.mongodb.TeacherRepo.
+2021-05-31 07:13:02.224  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.suggesttimetable.repo.IClassMongoRepo.
+2021-05-31 07:13:02.225  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.education.suggesttimetable.repo.ICourseMongoRepo.
+2021-05-31 07:13:02.241  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.gismap.repo.StreetRepo.
+2021-05-31 07:13:02.310  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.CustomerRevenueRepo.
+2021-05-31 07:13:02.311  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.OrderHeaderRemovedRepo.
+2021-05-31 07:13:02.312  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.ProductRevenueRepo.
+2021-05-31 07:13:02.314  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.order.repo.mongodb.TotalRevenueRepo.
+2021-05-31 07:13:02.386  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.CustomerRepository.
+2021-05-31 07:13:02.386  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.FacilityRepository.
+2021-05-31 07:13:02.389  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.InventoryItemDetailRepository.
+2021-05-31 07:13:02.391  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.InventoryItemRepository.
+2021-05-31 07:13:02.392  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.OrderItemRepository.
+2021-05-31 07:13:02.394  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.OrganizationRepository.
+2021-05-31 07:13:02.395  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.PersonRepository.
+2021-05-31 07:13:02.397  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductFacilityRepository.
+2021-05-31 07:13:02.398  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductPriceRepository.
+2021-05-31 07:13:02.399  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.ProductRepository.
+2021-05-31 07:13:02.400  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.PurchaseOrderRepository.
+2021-05-31 07:13:02.402  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.SalesOrderRepository.
+2021-05-31 07:13:02.403  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.UserLoginCustomerRepository.
+2021-05-31 07:13:02.404  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.specialpurpose.saleslogmongo.repository.UserLoginFacilityRepository.
+2021-05-31 07:13:02.413  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.SolverConfigParamRepo.
+2021-05-31 07:13:02.414  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportCustomerRepo.
+2021-05-31 07:13:02.415  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportDriverRepo.
+2021-05-31 07:13:02.416  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.tms.repo.TransportFacilityRepo.
+2021-05-31 07:13:02.478  INFO 11840 --- [           main]  .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.hust.baseweb.applications.webcam.repository.WebcamVideoRepository.
+2021-05-31 07:13:02.847  INFO 11840 --- [           main]  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 862ms. Found 173 repository interfaces.
+2021-05-31 07:13:03.518  INFO 11840 --- [           main]  trationDelegate$BeanPostProcessorChecker : Bean 'asyncConfiguration' of type [com.hust.baseweb.config.AsyncConfiguration$$EnhancerBySpringCGLIB$$a4633f97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-31 07:13:03.654  INFO 11840 --- [           main]  trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-31 07:13:04.190  INFO 11840 --- [           main]  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-31 07:13:04.202  INFO 11840 --- [           main]  o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8081"]
+2021-05-31 07:13:04.202  INFO 11840 --- [           main]  o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-31 07:13:04.203  INFO 11840 --- [           main]  org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-05-31 07:13:04.364  INFO 11840 --- [           main]  o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2021-05-31 07:13:04.365  INFO 11840 --- [           main]  o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5101 ms
+2021-05-31 07:13:04.624  INFO 11840 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-31 07:13:04.745  INFO 11840 --- [           main]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-31 07:13:04.925  INFO 11840 --- [           main]  o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-31 07:13:05.068  INFO 11840 --- [           main]  org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2021-05-31 07:13:05.303  INFO 11840 --- [           main]  o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-05-31 07:13:05.462  INFO 11840 --- [           main]  org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-05-31 07:13:07.806  INFO 11840 --- [           main]  o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-31 07:13:07.814  INFO 11840 --- [           main]  j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-31 07:13:08.342 DEBUG 11840 --- [           main]  c.h.baseweb.config.AsyncConfiguration    : Creating Async Task Executor
+2021-05-31 07:13:08.360  INFO 11840 --- [           main]  o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-05-31 07:13:08.733  INFO 11840 --- [           main]  org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017, localhost:27018, localhost:27019], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-05-31 07:13:08.734  INFO 11840 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2021-05-31 07:13:08.762  INFO 11840 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27018 to client view of cluster
+2021-05-31 07:13:08.763  INFO 11840 --- [           main]  org.mongodb.driver.cluster               : Adding discovered server localhost:27019 to client view of cluster
+2021-05-31 07:13:08.804  INFO 11840 --- [localhost:27018]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27018
+2021-05-31 07:13:08.804  INFO 11840 --- [localhost:27019]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27019
+2021-05-31 07:13:08.804  INFO 11840 --- [localhost:27017]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:1}] to localhost:27017
+2021-05-31 07:13:08.809  INFO 11840 --- [localhost:27018]  org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27018, type=REPLICA_SET_GHOST, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3713000, setName='null', canonicalAddress=null, hosts=[], passives=[], arbiters=[], primary='null', tagSet=TagSet{[]}, electionId=null, setVersion=null, lastWriteDate=null, lastUpdateTimeNanos=342061888050300}
+2021-05-31 07:13:08.810  INFO 11840 --- [localhost:27017]  org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5061800, setName='rs0', canonicalAddress=localhost:27017, hosts=[localhost:27017], passives=[], arbiters=[], primary='localhost:27017', tagSet=TagSet{[]}, electionId=7fffffff0000000000000004, setVersion=1, lastWriteDate=Mon May 31 07:12:59 ICT 2021, lastUpdateTimeNanos=342061888971700}
+2021-05-31 07:13:08.809  INFO 11840 --- [localhost:27019]  org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27019, type=REPLICA_SET_GHOST, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4899800, setName='null', canonicalAddress=null, hosts=[], passives=[], arbiters=[], primary='null', tagSet=TagSet{[]}, electionId=null, setVersion=null, lastWriteDate=null, lastUpdateTimeNanos=342061888858700}
+2021-05-31 07:13:08.811  INFO 11840 --- [localhost:27017]  org.mongodb.driver.cluster               : Discovered cluster type of REPLICA_SET
+2021-05-31 07:13:08.812  INFO 11840 --- [localhost:27017]  org.mongodb.driver.cluster               : Server localhost:27018 is no longer a member of the replica set.  Removing from client view of cluster.
+2021-05-31 07:13:08.813  INFO 11840 --- [localhost:27017]  org.mongodb.driver.cluster               : Server localhost:27019 is no longer a member of the replica set.  Removing from client view of cluster.
+2021-05-31 07:13:08.814  INFO 11840 --- [localhost:27017]  org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000004 from replica set primary localhost:27017
+2021-05-31 07:13:08.814  INFO 11840 --- [localhost:27017]  org.mongodb.driver.cluster               : Setting max set version to 1 from replica set primary localhost:27017
+2021-05-31 07:13:08.814  INFO 11840 --- [localhost:27017]  org.mongodb.driver.cluster               : Discovered replica set primary localhost:27017
+2021-05-31 07:13:08.873  WARN 11840 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:13:08.874  WARN 11840 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:13:08.892  WARN 11840 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:13:08.892  WARN 11840 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:13:11.378  WARN 11840 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:13:11.378  WARN 11840 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:13:11.378  WARN 11840 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:13:11.382  WARN 11840 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:13:11.382  WARN 11840 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:13:11.383  WARN 11840 --- [           main]  o.h.dialect.function.TemplateRenderer    : HHH000174: Function template anticipated 4 arguments, but 1 arguments encountered
+2021-05-31 07:13:12.940  INFO 11840 --- [           main]  o.s.c.fs.io.FileSystemResourceLoader     : Defaulting filesystem root to D:\Education\IT4409-124205\Project\project
+2021-05-31 07:13:13.076  WARN 11840 --- [           main]  JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-31 07:13:13.787  WARN 11840 --- [           main]  .m.c.i.MongoPersistentEntityIndexCreator : Automatic index creation will be disabled by default as of Spring Data MongoDB 3.x.
+	Please use 'MongoMappingContext#setAutoIndexCreation(boolean)' or override 'MongoConfigurationSupport#autoIndexCreation()' to be explicit.
+	However, we recommend setting up indices manually in an application ready block. You may use index derivation there as well.
+
+	> -----------------------------------------------------------------------------------------
+	> @EventListener(ApplicationReadyEvent.class)
+	> public void initIndicesAfterStartup() {
+	>
+	>     IndexOperations indexOps = mongoTemplate.indexOps(DomainType.class);
+	>
+	>     IndexResolver resolver = new MongoPersistentEntityIndexResolver(mongoMappingContext);
+	>     resolver.resolveIndexFor(DomainType.class).forEach(indexOps::ensureIndex);
+	> }
+	> -----------------------------------------------------------------------------------------
+
+2021-05-31 07:13:13.849  INFO 11840 --- [           main]  org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:2}] to localhost:27017
+2021-05-31 07:13:16.739  WARN 11840 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:13:16.740  WARN 11840 --- [           main]  o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might wanna check you annotation setup at the converter implementation.
+2021-05-31 07:13:17.157  INFO 11840 --- [           main]  o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6594fbc9, org.springframework.security.web.context.SecurityContextPersistenceFilter@28b11473, org.springframework.security.web.header.HeaderWriterFilter@5494cf4b, org.springframework.security.web.authentication.logout.LogoutFilter@70bba4d1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6a1c18ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19cc4b7d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67517ccf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@214a9e3d, org.springframework.security.web.session.SessionManagementFilter@1cf9430a, org.springframework.security.web.access.ExceptionTranslationFilter@15aa7d97, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19cc4b7c]
+2021-05-31 07:13:17.198  INFO 11840 --- [           main]  o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-05-31 07:13:17.269  INFO 11840 --- [           main]  o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8081"]
+2021-05-31 07:13:17.309  INFO 11840 --- [           main]  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/api'
+2021-05-31 07:13:17.314  INFO 11840 --- [           main]  com.hust.baseweb.BasewebApplication      : Started BasewebApplication in 18.827 seconds (JVM running for 19.754)
+2021-05-31 07:13:39.119  INFO 11840 --- [nio-8081-exec-2]  o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-31 07:13:39.119  INFO 11840 --- [nio-8081-exec-2]  o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-31 07:13:39.143  INFO 11840 --- [nio-8081-exec-2]  o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2021-05-31 07:13:39.629  INFO 11840 --- [nio-8081-exec-2]  io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-05-31 07:13:39.633  INFO 11840 --- [nio-8081-exec-2]  io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-05-31 07:16:01.603 ERROR 11840 --- [nio-8081-exec-5]  o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed; nested exception is org.springframework.mail.MailSendException: Failed messages: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out; message exceptions (1) are:
+Failed message 1: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out] with root cause
+org.springframework.mail.MailSendException: Failed messages: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:491)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:361)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:356)
+	at com.hust.baseweb.applications.mail.service.MailServiceImpl.sendMailWithAttachments(MailServiceImpl.java:256)
+	at com.hust.baseweb.applications.mail.service.MailController.sendMailWithMultipleFiles(MailController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:154)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-05-31 07:17:09.564 ERROR 11840 --- [nio-8081-exec-9]  o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed; nested exception is org.springframework.mail.MailSendException: Failed messages: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out; message exceptions (1) are:
+Failed message 1: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out] with root cause
+org.springframework.mail.MailSendException: Failed messages: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:491)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:361)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:356)
+	at com.hust.baseweb.applications.mail.service.MailServiceImpl.sendMailWithAttachments(MailServiceImpl.java:256)
+	at com.hust.baseweb.applications.mail.service.MailController.sendMailWithMultipleFiles(MailController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:154)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-05-31 07:18:50.493 ERROR 11840 --- [io-8081-exec-10]  o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed; nested exception is org.springframework.mail.MailSendException: Failed messages: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out; message exceptions (1) are:
+Failed message 1: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out] with root cause
+org.springframework.mail.MailSendException: Failed messages: javax.mail.MessagingException: Exception reading response;
+  nested exception is:
+	java.net.SocketTimeoutException: Read timed out
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:491)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:361)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:356)
+	at com.hust.baseweb.applications.mail.service.MailServiceImpl.sendMailWithAttachments(MailServiceImpl.java:256)
+	at com.hust.baseweb.applications.mail.service.MailController.sendMailWithMultipleFiles(MailController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:154)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-05-31 07:23:46.856  INFO 11840 --- [extShutdownHook]  o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-05-31 07:23:48.048  INFO 11840 --- [extShutdownHook]  o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'taskExecutor'
+2021-05-31 07:23:48.109  INFO 11840 --- [extShutdownHook]  j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-31 07:23:48.121  INFO 11840 --- [extShutdownHook]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-31 07:23:48.129  INFO 11840 --- [extShutdownHook]  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

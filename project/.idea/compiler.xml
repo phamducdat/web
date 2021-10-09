@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="registration" />
+        <module name="jackrutorial_2" />
+        <module name="openvidu-mvc-java" />
+        <module name="it3180" />
+        <module name="registration (1)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="freelance-platform" target="1.8" />
+      <module name="it3180" target="1.8" />
+      <module name="jackrutorial_2" target="1.8" />
+      <module name="my-mvc-java" target="1.8" />
+      <module name="openvidu-mvc-java" target="1.8" />
+      <module name="openvidu-mvc-java (1)" target="1.8" />
+      <module name="registration" target="1.8" />
+      <module name="registration (1)" target="1.8" />
+      <module name="Spring-Boot-Session-Example" target="8" />
+      <module name="spring-boot-upload-files-database" target="1.8" />
+      <module name="vidu01" target="1.8" />
+      <module name="vidu01 (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Spring-Boot-Session-Example" options="-parameters" />
+      <module name="it3180" options="-parameters" />
+      <module name="jackrutorial_2" options="-parameters" />
+      <module name="my-mvc-java" options="-parameters" />
+      <module name="openvidu-mvc-java" options="-parameters" />
+      <module name="openvidu-mvc-java (1)" options="-parameters" />
+      <module name="registration" options="-parameters" />
+      <module name="registration (1)" options="-parameters" />
+      <module name="spring-boot-upload-files-database" options="-parameters" />
+      <module name="vidu01" options="-parameters" />
+      <module name="vidu01 (1)" options="-parameters" />
+    </option>
+  </component>
+</project>

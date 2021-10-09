@@ -1,0 +1,17 @@
+#job-details-section-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#jobs-reactive {
+    text-align: center;
+    border-left: 1px solid gray;
+    padding: 0 32px;
+}
+
+#jobs-reactive .button {
+    width: 100%;
+    margin-top: 16px;
+    line-height: 32px;
+    border-radius: 32px;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../../../../Project/openvidu-tutorials/openvidu-mvc-java/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../../Project/Test Project/syslas/IT4409/pom.xml" />
+        <option value="$PROJECT_DIR$/../project - Copy/IT4409/pom.xml" />
+        <option value="$PROJECT_DIR$/../project2/IT4409/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../../Project/Test Project/project/IT4409/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../../Project/Test Project/vidu02/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../../Project/Test Project/vidu02/IT4409/pom.xml" />
+        <option value="$PROJECT_DIR$/../Application/pom.xml" />
+        <option value="$PROJECT_DIR$/IT4409/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="16" project-jdk-type="JavaSDK" />
+</project>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/freelancer::freelancer-fragment(
+    ~{::title},
+    ~{:: #my-jobs-static-resources},
+    ~{:: #my-jobs-section-header},
+    ~{:: #my-jobs-section-content},
+)}">
+
+<head>
+    <title>My Jobs - Upwork</title>
+
+    <!-- Các tài nguyên JS, CSS riêng của trang này -->
+    <th:block id="my-jobs-static-resources">
+    </th:block>
+
+</head>
+
+<body>
+    <section class="section-header" id="my-jobs-section-header">
+        <div class="section-title">My Jobs</div>
+        <div class="section-notice">
+            <span>
+                Earnings available now: <a href="#"><strong>$0.00 </strong></a>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots"
+                viewBox="0 0 16 16">
+                <path
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+            </svg>
+        </div>
+    </section>
+
+    <section class="section-content" id="my-jobs-section-content">
+        <div class="section-content-header">
+            Active contracts
+        </div>
+        <div class="section-content-body"></div>
+        <hr>
+        <div class="section-content-footer">
+            Contracts you're actively working on will appear here.
+            <a href="#"><strong>Start searching for new projects now!</strong></a>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Application/it3180.iml" filepath="$PROJECT_DIR$/../Application/it3180.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Project/Test Project/vidu02/jackrutorial_2.iml" filepath="$PROJECT_DIR$/../../../../Project/Test Project/vidu02/jackrutorial_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Project/openvidu-tutorials/openvidu-mvc-java/openvidu-mvc-java.iml" filepath="$PROJECT_DIR$/../../../../Project/openvidu-tutorials/openvidu-mvc-java/openvidu-mvc-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Project/Test Project/vidu02/IT4409/registration.iml" filepath="$PROJECT_DIR$/../../../../Project/Test Project/vidu02/IT4409/registration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IT4409/registration (1).iml" filepath="$PROJECT_DIR$/IT4409/registration (1).iml" />
+    </modules>
+  </component>
+</project>
