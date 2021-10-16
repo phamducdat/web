@@ -1,0 +1,471 @@
+swagger: '2.0'
+info:
+  description: The document of MiniBlogs
+  version: 1.0.0
+  title: MiniBlogs REST APIs
+  contact:
+    name: Dat Pham
+    email: phamducdat2402@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: 'localhost:8080'
+basePath: /miniblogs/backend/v1
+
+paths:
+  /authors:
+    get:
+      tags:
+        - Authors
+      summary: Get All Author
+      operationId: getAllAuthor
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/AuthorList'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+    post:
+      tags:
+        - Authors
+      summary: Create New Author
+      operationId: createAuthor
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: authorRequest
+          description: The Author To Create
+          required: true
+          schema:
+            $ref: "#/definitions/AuthorRequest"
+      responses:
+        200:
+          $ref: '#/responses/Author'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+  /authors/{authorId}:
+    parameters:
+      - name: authorId
+        in: path
+        description: The Id Of Author
+        required: true
+        type: string
+    get:
+      tags:
+        - Authors
+      summary: Get Author By Id
+      operationId: getAuthorById
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/Author'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+
+  /authors/{authorId}/blogs:
+    parameters:
+      - name: authorId
+        in: path
+        description: The Id Of Author
+        required: true
+        type: string
+    get:
+      tags:
+        - Blogs
+      summary: Get All Blog Of Author
+      operationId: getAllBlogByAuthor
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/BlogList'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+
+
+  /blogs:
+    get:
+      tags:
+        - Blogs
+      summary: Get All Blog
+      operationId: getAllBlog
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/BlogList'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+    post:
+      tags:
+        - Blogs
+      summary: Create The New Blog
+      operationId: CreateBlog
+      consumes:
+        - application/json
+      produces:
+        - application/json
+
+      parameters:
+        - in: body
+          name: blogRequest
+          required: true
+          schema:
+            $ref: "#/definitions/BlogRequest"
+      responses:
+        200:
+          $ref: '#/responses/Blog'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+
+  /blogs/{blogId}:
+    parameters:
+      - name: blogId
+        in: path
+        description: Blog Id
+        required: true
+        type: string
+    get:
+      tags:
+        - Blogs
+      summary: Get Blog By Id
+      operationId: getBlogById
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/Blog'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+
+
+  /contacts:
+    get:
+      tags:
+        - Contacts
+      summary: Get All Contact
+      operationId: getAllContact
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/ContactList'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+    post:
+      tags:
+        - Contacts
+      summary: Create The New Contact
+      operationId: createContact
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: contactRequest
+          required: true
+          schema:
+            $ref: "#/definitions/ContactRequest"
+      responses:
+        200:
+          $ref: '#/responses/OK'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+  /authors/{authorId}/contacts:
+    parameters:
+      - name: authorId
+        in: path
+        description: Author Id
+        required: true
+        type: string
+    get:
+      tags:
+        - Contacts
+      summary: Get All Contact By Author
+      operationId: getAllContactByAuthor
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/ContactList'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+
+
+
+definitions:
+
+  Author:
+    type: object
+    properties:
+      authorId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
+
+      authorName:
+        type: string
+        example: Dat Pham
+
+      authorEmail:
+        type: string
+        example: phamducdat2402@gmail.com
+
+      authorDescription:
+        type: string
+        example: I am Dat Pham
+
+      authorAvatar:
+        type: string
+        example: pictures/avatar
+
+  AuthorList:
+    type: array
+    items:
+      $ref: "#/definitions/Author"
+
+  AuthorRequest:
+    type: object
+    properties:
+
+      authorName:
+        type: string
+        example: Dat Pham
+
+      authorEmail:
+        type: string
+        example: phamducdat2402@gmail.com
+
+      authorDescription:
+        type: string
+        example: I am Dat Pham
+
+      authorAvatar:
+        type: string
+        example: pictures/avatar
+
+  Blog:
+    type: object
+    properties:
+
+      blogId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3d
+
+      authorId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
+
+      blogName:
+        type: string
+        example: Learn CSS
+
+      blogIntroduction:
+        type: string
+        example: Build Responsive Real-World Websites with HTML and CSS
+
+      blogContent:
+        type: string
+        example: Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid
+      blogPicture:
+        type: string
+        example: picture/css-picture
+
+      blogType:
+        type: string
+        example: Web
+
+      blogDate:
+        type: string
+        description: The date when the blog was created by author
+        example: "2021-01-01"
+        format: date
+        pattern: "YYYY-MM-DD"
+        minLength: 0
+        maxLength: 10
+
+
+  BlogList:
+    type: array
+    items:
+      $ref: "#/definitions/Blog"
+
+  BlogRequest:
+    type: object
+    properties:
+      authorId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
+
+      blogName:
+        type: string
+        example: Learn CSS
+
+      blogIntroduction:
+        type: string
+        example: Build Responsive Real-World Websites with HTML and CSS
+
+      blogContent:
+        type: string
+        example: Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid
+
+      blogPicture:
+        type: string
+        example: picture/css-picture
+
+      blogType:
+        type: string
+        example: Web
+
+      blogDate:
+        type: string
+        description: The date when the blog was created by author
+        example: "2021-01-01"
+        format: date
+        pattern: "YYYY-MM-DD"
+        minLength: 0
+        maxLength: 10
+
+  Contact:
+    type: object
+    properties:
+
+      contactId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3a
+
+      authorId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
+
+      contactEmailFrom:
+        type: string
+        format: email
+        example: from@gmail.com
+
+      contactName:
+        type: string
+        example: PhamDuc
+
+      contactMessage:
+        type: string
+        example: How you do that
+
+  ContactList:
+    type: array
+    items:
+      $ref: "#/definitions/Contact"
+
+  ContactRequest:
+    type: object
+    properties:
+
+      authorId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
+
+
+      contactEmailFrom:
+        type: string
+        format: email
+        example: from@gmail.com
+
+      contactName:
+        type: string
+        example: PhamDuc
+
+      contactMessage:
+        type: string
+        example: How you do that
+
+responses:
+  Author:
+    description: "Author response"
+    schema:
+      $ref: "#/definitions/Author"
+  AuthorList:
+    description: "List Author response"
+    schema:
+      $ref: "#/definitions/AuthorList"
+  Blog:
+    description: "Blog response"
+    schema:
+      $ref: "#/definitions/Blog"
+  BlogList:
+    description: "BlogList response"
+    schema:
+      $ref: "#/definitions/BlogList"
+  Contact:
+    description: "Contact response"
+    schema:
+      $ref: "#/definitions/Contact"
+  ContactList:
+    description: "ContactList response"
+    schema:
+      $ref: "#/definitions/ContactList"
+  OK:
+    description: '200: OK'
+  Created:
+    description: '201: Created'
+  Accepted:
+    description: '202: Accepted'
+  NoContent:
+    description: '204: NoContent'
+  BadRequest:
+    description: '400: Bad Request'
+  NoAuthorized:
+    description: '401: No Authorized'
+  Forbidden:
+    description: '403: Forbidden'
+  NotFound:
+    description: '404: Not Found'
+  InternalServerError:
+    description: '500: Internal Server Error'
+
+
+
