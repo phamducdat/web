@@ -32,6 +32,9 @@ public class AuthorEntity {
     @Column(name = "AUTHOR_AVATAR", nullable = false)
     private String authorAvatar;
 
+    @Column(name = "AUTHOR_PASSWORD", nullable = false)
+    private String authorPassword;
+
     @OneToMany(mappedBy = "authorId", cascade = CascadeType.ALL)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude

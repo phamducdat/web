@@ -25,6 +25,7 @@ public class AuthorMapper {
 
     public Author mapAuthorFromAuthorEntity(AuthorEntity from) {
         Author author = new Author();
+        author.setAuthorPassword(from.getAuthorPassword());
         author.setAuthorId(from.getAuthorId());
         author.setAuthorAvatar(from.getAuthorAvatar());
         author.setAuthorEmail(from.getAuthorEmail());
@@ -36,6 +37,7 @@ public class AuthorMapper {
 
     public AuthorEntity mapAuthorEntityFromAuthor(Author from) {
         AuthorEntity entity = new AuthorEntity();
+        entity.setAuthorPassword(from.getAuthorPassword());
         entity.setAuthorId(UUID.randomUUID().toString());
         entity.setAuthorAvatar(from.getAuthorAvatar());
         entity.setAuthorName(from.getAuthorName());
@@ -63,6 +65,7 @@ public class AuthorMapper {
         entity.setAuthorDescription(from.getAuthorDescription());
         entity.setAuthorAvatar(from.getAuthorAvatar());
         entity.setAuthorName(from.getAuthorName());
+        entity.setAuthorPassword(from.getAuthorPassword());
 
         return entity;
 
@@ -76,6 +79,7 @@ public class AuthorMapper {
         entity.setAuthorEmail(request.getAuthorEmail());
         entity.setAuthorDescription(request.getAuthorDescription());
         entity.setAuthorName(request.getAuthorName());
+        entity.setAuthorPassword(request.getAuthorPassword());
 
         return entity;
     }

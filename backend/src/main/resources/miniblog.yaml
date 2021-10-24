@@ -13,6 +13,23 @@ host: 'localhost:8080'
 basePath: /miniblogs/backend/v1
 
 paths:
+  /admin:
+    get:
+      tags:
+        - Admins
+      summary: Get Admin
+      operationId: getAdmin
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/Admin'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
   /authors:
     get:
       tags:
@@ -241,6 +258,25 @@ paths:
 
 definitions:
 
+  Admin:
+    type: object
+    properties:
+      adminId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
+
+      adminName:
+        type: string
+        example: Dat Pham
+
+      adminEmail:
+        type: string
+        example: phamducdat2402@gmail.com
+
+      authorPassword:
+        type: string
+        example: 123456
+
   Author:
     type: object
     properties:
@@ -263,6 +299,10 @@ definitions:
       authorAvatar:
         type: string
         example: pictures/avatar
+
+      authorPassword:
+        type: string
+        example: 123456
 
   AuthorList:
     type: array
@@ -288,6 +328,10 @@ definitions:
       authorAvatar:
         type: string
         example: pictures/avatar
+
+      authorPassword:
+        type: string
+        example: 123456
 
   Blog:
     type: object
@@ -424,6 +468,11 @@ definitions:
         example: How you do that
 
 responses:
+
+  Admin:
+    description: "Admin response"
+    schema:
+      $ref: "#/definitions/Admin"
   Author:
     description: "Author response"
     schema:
