@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import Detail from "./blogs/Detail";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Detail from "./blogs/Detail";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
 
 function App() {
   return (

@@ -35,6 +35,7 @@ public class AuthorController implements AuthorsApi {
     @Override
     public ResponseEntity<Author> createAuthor(AuthorRequest authorRequest) {
         authorValidator.validateAddAuthor(authorRequest);
+        authorValidator.validateAuthorEmailNotExist(authorRequest.getAuthorEmail());
         Author author = authorService.createAuthor(authorRequest);
         return new ResponseEntity<>(author, HttpStatus.OK);
     }

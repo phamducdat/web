@@ -16,7 +16,7 @@ public class AdminMapper {
         to.setAdminEmail(from.getAdminEmail());
         to.setAdminId(from.getAdminId());
         to.setAdminName(from.getAdminName());
-        to.setAuthorPassword(from.getAdminPassword());
+        to.setAdminPassword(from.getAdminPassword());
 
         return  to;
     }

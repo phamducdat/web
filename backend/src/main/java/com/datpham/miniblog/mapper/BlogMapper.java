@@ -35,7 +35,7 @@ public class BlogMapper {
         blog.setBlogId(from.getBlogId());
         blog.setBlogIntroduction(from.getBlogIntroduction());
         blog.setBlogContent(from.getBlogContent());
-        blog.setBlogDate(convertDateToLocalDate(from.getBlogDate()));
+        blog.setBlogDate(from.getBlogDate());
         blog.setBlogType(from.getBlogType());
         blog.setBlogName(from.getBlogName());
         blog.setBlogPicture(from.getBlogPicture());
@@ -64,7 +64,7 @@ public class BlogMapper {
         entity.setBlogIntroduction(request.getBlogIntroduction());
         entity.setBlogPicture(request.getBlogPicture());
         entity.setBlogName(request.getBlogName());
-        entity.setBlogDate(convertLocalDateToDate(request.getBlogDate()));
+        entity.setBlogDate(request.getBlogDate());
         entity.setBlogContent(request.getBlogContent());
         entity.setAuthorId(author);
         entity.setBlogIntroduction(request.getBlogIntroduction());
@@ -74,14 +74,6 @@ public class BlogMapper {
 
 
 
-    private Date convertLocalDateToDate(LocalDate localDate) {
-        return java.sql.Date.valueOf(localDate);
-    }
 
-    private LocalDate convertDateToLocalDate(Date date) {
-        return date.toInstant()
-                .atZone(ZoneId.systemDefault())
-                .toLocalDate();
-    }
 
 }

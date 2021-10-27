@@ -13,6 +13,53 @@ host: 'localhost:8080'
 basePath: /miniblogs/backend/v1
 
 paths:
+  /login/admin:
+    get:
+      tags:
+        - Login
+      summary: Login admin
+      operationId: loginAdmin
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: adminLogin
+          required: true
+          schema:
+            $ref: "#/definitions/AdminLogin"
+      responses:
+        200:
+          $ref: '#/responses/Admin'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+  /login/author:
+    get:
+      tags:
+        - Login
+      summary: Login author
+      operationId: loginAuthor
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: authorLogin
+          required: true
+          schema:
+            $ref: "#/definitions/AuthorLogin"
+      responses:
+        200:
+          $ref: '#/responses/Author'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+
   /admin:
     get:
       tags:
@@ -273,9 +320,18 @@ definitions:
         type: string
         example: phamducdat2402@gmail.com
 
-      authorPassword:
+      adminPassword:
         type: string
         example: 123456
+  AdminLogin:
+    type: object
+    properties:
+      adminEmail:
+        type: string
+        example: test@gmail.com
+      adminPassword:
+        type: string
+        example: 123
 
   Author:
     type: object
@@ -303,6 +359,19 @@ definitions:
       authorPassword:
         type: string
         example: 123456
+
+      adminId:
+        type: string
+        example: 1234
+  AuthorLogin:
+    type: object
+    properties:
+      authorEmail:
+        type: string
+        example: test@gmail.com
+      authorPassword:
+        type: string
+        example: 123
 
   AuthorList:
     type: array
@@ -333,6 +402,9 @@ definitions:
         type: string
         example: 123456
 
+      adminId:
+        type: string
+        example: 1234
   Blog:
     type: object
     properties:
@@ -366,12 +438,6 @@ definitions:
 
       blogDate:
         type: string
-        description: The date when the blog was created by author
-        example: "2021-01-01"
-        format: date
-        pattern: "YYYY-MM-DD"
-        minLength: 0
-        maxLength: 10
 
 
   BlogList:
@@ -408,12 +474,7 @@ definitions:
 
       blogDate:
         type: string
-        description: The date when the blog was created by author
-        example: "2021-01-01"
-        format: date
-        pattern: "YYYY-MM-DD"
-        minLength: 0
-        maxLength: 10
+
 
   Contact:
     type: object

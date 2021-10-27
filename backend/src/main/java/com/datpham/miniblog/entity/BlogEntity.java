@@ -34,7 +34,7 @@ public class BlogEntity {
     private String blogType;
 
     @Column(name = "BLOG_DATE", nullable = false)
-    private Date blogDate;
+    private String blogDate;
 
     @ManyToOne
     @JoinColumn(name = "AUTHOR_ID")
@@ -42,15 +42,5 @@ public class BlogEntity {
     @ToString.Exclude
     private AuthorEntity authorId;
 
-    public BlogEntity(String blogId, String blogName, String blogIntroduction, String blogContent, String blogPicture, String blogType, Date blogDate, AuthorEntity authorId) {
-        this.blogId = blogId;
-        this.blogName = blogName;
-        this.blogIntroduction = blogIntroduction;
-        this.blogContent = blogContent;
-        this.blogPicture = blogPicture;
-        this.blogType = blogType;
-        this.blogDate = blogDate;
-        this.authorId = authorId;
-    }
 
 }

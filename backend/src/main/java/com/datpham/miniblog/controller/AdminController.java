@@ -31,4 +31,5 @@ public class AdminController implements AdminApi {
 
         return new ResponseEntity<>(admin, HttpStatus.OK);
     }
+
 }

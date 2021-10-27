@@ -6,9 +6,12 @@ import com.datpham.miniblog.mapper.AuthorMapper;
 import com.datpham.miniblog.repository.AuthorRepository;
 import io.tej.SwaggerCodgen.model.Author;
 import io.tej.SwaggerCodgen.model.AuthorList;
+import io.tej.SwaggerCodgen.model.AuthorLogin;
 import io.tej.SwaggerCodgen.model.AuthorRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AuthorService {
@@ -35,5 +38,18 @@ public class AuthorService {
         AuthorEntity entity = authorRepository.getById(authorId);
 
         return authorMapper.mapAuthorFromAuthorEntity(entity);
+    }
+
+    public Author loginAuthor(AuthorLogin authorLogin) {
+        List<AuthorEntity> authorEntityList = authorRepository.findAll();
+
+        for (AuthorEntity authorEntity : authorEntityList) {
+            if (authorLogin.getAuthorEmail().equals(authorEntity.getAuthorEmail())) {
+                if (authorLogin.getAuthorPassword().equals(authorEntity.getAuthorPassword())) {
+                    return authorMapper.mapAuthorFromAuthorEntity(authorEntity);
+                }
+            }
+        }
+        return null;
     }
 }

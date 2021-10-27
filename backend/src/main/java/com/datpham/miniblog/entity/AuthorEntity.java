@@ -45,6 +45,12 @@ public class AuthorEntity {
     @ToString.Exclude
     private Collection<ContactEntity> contactEntities;
 
+    @ManyToOne
+    @JoinColumn(name = "ADMIN_ID")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private AdminEntity adminId;
+
 
 
 }

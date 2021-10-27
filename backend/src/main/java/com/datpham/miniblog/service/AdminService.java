@@ -5,6 +5,7 @@ import com.datpham.miniblog.entity.AdminEntity;
 import com.datpham.miniblog.mapper.AdminMapper;
 import com.datpham.miniblog.repository.AdminRepository;
 import io.tej.SwaggerCodgen.model.Admin;
+import io.tej.SwaggerCodgen.model.AdminLogin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,17 @@ public class AdminService {
         List<AdminEntity> entity = repository.findAll();
 
         return mapper.mapAdminFromAdminEntity(entity.get(0));
+    }
+
+    public Admin loginAdmin(AdminLogin adminLogin) {
+        List<AdminEntity> adminEntityList = repository.findAll();
+        for (AdminEntity adminEntity: adminEntityList) {
+            if (adminLogin.getAdminEmail().equals(adminEntity.getAdminEmail())) {
+                if (adminLogin.getAdminPassword().equals(adminEntity.getAdminPassword())) {
+                    return mapper.mapAdminFromAdminEntity(adminEntity);
+                }
+            }
+        }
+        return  null;
     }
 }

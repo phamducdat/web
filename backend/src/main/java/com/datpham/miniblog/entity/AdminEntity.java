@@ -1,13 +1,13 @@
 package com.datpham.miniblog.entity;
 
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Getter
@@ -27,5 +27,10 @@ public class AdminEntity {
 
     @Column(name = "ADMIN_PASSWORD", nullable = false)
     private String adminPassword;
+
+    @OneToMany(mappedBy = "adminId", cascade = CascadeType.ALL)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private Collection<AuthorEntity> authorEntities;
 
 }
