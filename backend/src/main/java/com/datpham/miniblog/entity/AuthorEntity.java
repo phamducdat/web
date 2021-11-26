@@ -7,7 +7,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 
 
 @Entity
@@ -31,6 +33,12 @@ public class AuthorEntity {
 
     @Column(name = "AUTHOR_AVATAR", nullable = false)
     private String authorAvatar;
+
+    @Column(name = "AUTHOR_PHONE", nullable = false)
+    private String authorPhone;
+
+    @Column(name = "AUTHOR_DATE_OF_BIRTH", nullable = false)
+    private LocalDate authorDateOfBirth;
 
     @Column(name = "AUTHOR_PASSWORD", nullable = false)
     private String authorPassword;

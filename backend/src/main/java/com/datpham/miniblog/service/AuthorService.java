@@ -9,6 +9,9 @@ import io.tej.SwaggerCodgen.model.AuthorList;
 import io.tej.SwaggerCodgen.model.AuthorLogin;
 import io.tej.SwaggerCodgen.model.AuthorRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +23,13 @@ public class AuthorService {
     private final AuthorMapper authorMapper;
 
     @Autowired
-    public AuthorService(AuthorRepository authorRepository, AuthorMapper authorMapper) {
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+//
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public AuthorService(AuthorRepository authorRepository, AuthorMapper authorMapper ) {
         this.authorRepository = authorRepository;
         this.authorMapper = authorMapper;
     }
@@ -45,7 +54,7 @@ public class AuthorService {
 
         for (AuthorEntity authorEntity : authorEntityList) {
             if (authorLogin.getAuthorEmail().equals(authorEntity.getAuthorEmail())) {
-                if (authorLogin.getAuthorPassword().equals(authorEntity.getAuthorPassword())) {
+                if (bCryptPasswordEncoder.matches(authorLogin.getAuthorPassword(), authorEntity.getAuthorPassword())) {
                     return authorMapper.mapAuthorFromAuthorEntity(authorEntity);
                 }
             }

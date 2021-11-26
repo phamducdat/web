@@ -9,6 +9,7 @@ import io.tej.SwaggerCodgen.model.Author;
 import io.tej.SwaggerCodgen.model.AuthorList;
 import io.tej.SwaggerCodgen.model.AuthorRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +21,18 @@ public class AuthorMapper {
     private final AuthorRepository repository;
     private final AdminRepository adminRepository;
 
+    @Autowired
+    private final  BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
+
 
     @Autowired
-    public AuthorMapper(AuthorRepository repository, AdminRepository adminRepository) {
+    public AuthorMapper(AuthorRepository repository, AdminRepository adminRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.repository = repository;
         this.adminRepository = adminRepository;
+//        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     public Author mapAuthorFromAuthorEntity(AuthorEntity from) {
@@ -34,8 +42,10 @@ public class AuthorMapper {
         author.setAuthorId(from.getAuthorId());
         author.setAuthorAvatar(from.getAuthorAvatar());
         author.setAuthorEmail(from.getAuthorEmail());
+        author.setAuthorPhone(from.getAuthorPhone());
         author.setAuthorDescription(from.getAuthorDescription());
         author.setAuthorName(from.getAuthorName());
+        author.setAuthorDateOfBirth(from.getAuthorDateOfBirth());
 
         return author;
     }
@@ -60,7 +70,10 @@ public class AuthorMapper {
         entity.setAuthorDescription(from.getAuthorDescription());
         entity.setAuthorAvatar(from.getAuthorAvatar());
         entity.setAuthorName(from.getAuthorName());
-        entity.setAuthorPassword(from.getAuthorPassword());
+        entity.setAuthorPassword(bCryptPasswordEncoder.encode(from.getAuthorPassword()));
+        entity.setAuthorDateOfBirth(from.getAuthorDateOfBirth());
+        entity.setAuthorPhone(from.getAuthorPhone());
+
 
         return entity;
 
@@ -76,8 +89,10 @@ public class AuthorMapper {
         entity.setAuthorAvatar(request.getAuthorAvatar());
         entity.setAuthorEmail(request.getAuthorEmail());
         entity.setAuthorDescription(request.getAuthorDescription());
+        entity.setAuthorPhone(request.getAuthorPhone());
         entity.setAuthorName(request.getAuthorName());
-        entity.setAuthorPassword(request.getAuthorPassword());
+        entity.setAuthorPassword(bCryptPasswordEncoder.encode(request.getAuthorPassword()));
+        entity.setAuthorDateOfBirth(request.getAuthorDateOfBirth());
 
         return entity;
     }

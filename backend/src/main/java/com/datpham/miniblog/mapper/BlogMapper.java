@@ -3,17 +3,16 @@ package com.datpham.miniblog.mapper;
 
 import com.datpham.miniblog.entity.AuthorEntity;
 import com.datpham.miniblog.entity.BlogEntity;
+import com.datpham.miniblog.entity.CategoryEntity;
 import com.datpham.miniblog.repository.AuthorRepository;
 import com.datpham.miniblog.repository.BlogRepository;
+import com.datpham.miniblog.repository.CategoryRepository;
 import io.tej.SwaggerCodgen.model.Blog;
 import io.tej.SwaggerCodgen.model.BlogList;
 import io.tej.SwaggerCodgen.model.BlogRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,12 +21,14 @@ public class BlogMapper {
 
     private final BlogRepository repository;
     private final AuthorRepository authorRepository;
+    private final CategoryRepository categoryRepository;
 
 
     @Autowired
-    public BlogMapper(BlogRepository repository, AuthorRepository authorRepository) {
+    public BlogMapper(BlogRepository repository, AuthorRepository authorRepository, CategoryRepository categoryRepository) {
         this.repository = repository;
         this.authorRepository = authorRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     public Blog mapBlogFromBlogEntity(BlogEntity from) {
@@ -36,10 +37,10 @@ public class BlogMapper {
         blog.setBlogIntroduction(from.getBlogIntroduction());
         blog.setBlogContent(from.getBlogContent());
         blog.setBlogDate(from.getBlogDate());
-        blog.setBlogType(from.getBlogType());
         blog.setBlogName(from.getBlogName());
         blog.setBlogPicture(from.getBlogPicture());
         blog.setAuthorId(from.getAuthorId().getAuthorId());
+        blog.setCategoryName(from.getCategoryId().getCategoryName());
         return blog;
 
     }
@@ -59,7 +60,8 @@ public class BlogMapper {
     public BlogEntity mapBlogEntityFromBlogRequest(BlogRequest request) {
         BlogEntity entity = new BlogEntity();
         AuthorEntity author = authorRepository.getById(request.getAuthorId());
-        entity.setBlogType(request.getBlogType());
+        CategoryEntity category = categoryRepository.getById(request.getCategoryId());
+
         entity.setBlogId(UUID.randomUUID().toString());
         entity.setBlogIntroduction(request.getBlogIntroduction());
         entity.setBlogPicture(request.getBlogPicture());
@@ -68,6 +70,9 @@ public class BlogMapper {
         entity.setBlogContent(request.getBlogContent());
         entity.setAuthorId(author);
         entity.setBlogIntroduction(request.getBlogIntroduction());
+        entity.setCategoryId(category);
+        entity.setCategoryName(category.getCategoryName());
+
 
         return entity;
     }

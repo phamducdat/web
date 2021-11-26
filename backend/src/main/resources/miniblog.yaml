@@ -348,6 +348,14 @@ definitions:
         type: string
         example: phamducdat2402@gmail.com
 
+      authorPhone:
+        type: string
+        example: 12312321312
+
+      authorDateOfBirth:
+        type: string
+        format: date
+
       authorDescription:
         type: string
         example: I am Dat Pham
@@ -398,6 +406,14 @@ definitions:
         type: string
         example: pictures/avatar
 
+      authorPhone:
+        type: string
+        example: 12312321312
+
+      authorDateOfBirth:
+        type: string
+        format: date
+
       authorPassword:
         type: string
         example: 123456
@@ -417,6 +433,14 @@ definitions:
         type: string
         example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
 
+      categoryId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3d
+
+      categoryName:
+        type: string
+        example: Animal
+
       blogName:
         type: string
         example: Learn CSS
@@ -432,12 +456,14 @@ definitions:
         type: string
         example: picture/css-picture
 
-      blogType:
-        type: string
-        example: Web
 
       blogDate:
         type: string
+        format: date
+
+
+
+
 
 
   BlogList:
@@ -452,6 +478,10 @@ definitions:
         type: string
         example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3f
 
+      categoryId:
+        type: string
+        example: 030e5438-4d9e-4d41-aa68-ac04b05b7c3d
+
       blogName:
         type: string
         example: Learn CSS
@@ -468,12 +498,10 @@ definitions:
         type: string
         example: picture/css-picture
 
-      blogType:
-        type: string
-        example: Web
 
       blogDate:
         type: string
+        format: date
 
 
   Contact:

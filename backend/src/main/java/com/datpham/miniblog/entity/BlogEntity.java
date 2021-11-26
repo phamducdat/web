@@ -30,17 +30,24 @@ public class BlogEntity {
     @Column(name = "BLOG_PICTURE", nullable = false)
     private String blogPicture;
 
-    @Column(name = "BLOG_TYPE", nullable = false)
-    private String blogType;
 
     @Column(name = "BLOG_DATE", nullable = false)
-    private String blogDate;
+    private LocalDate blogDate;
 
     @ManyToOne
     @JoinColumn(name = "AUTHOR_ID")
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private AuthorEntity authorId;
+
+    @ManyToOne
+    @JoinColumn(name = "CATEGORY_ID")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private CategoryEntity categoryId;
+
+    @Column(name = "CATEGORY_NAME", nullable = true)
+    private String categoryName;
 
 
 }
