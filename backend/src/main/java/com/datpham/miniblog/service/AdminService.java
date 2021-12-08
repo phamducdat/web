@@ -7,6 +7,7 @@ import com.datpham.miniblog.repository.AdminRepository;
 import io.tej.SwaggerCodgen.model.Admin;
 import io.tej.SwaggerCodgen.model.AdminLogin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,9 @@ public class AdminService {
 
     private final AdminMapper mapper;
     private final AdminRepository repository;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
     public AdminService(AdminMapper mapper, AdminRepository repository) {
@@ -33,7 +37,7 @@ public class AdminService {
         List<AdminEntity> adminEntityList = repository.findAll();
         for (AdminEntity adminEntity: adminEntityList) {
             if (adminLogin.getAdminEmail().equals(adminEntity.getAdminEmail())) {
-                if (adminLogin.getAdminPassword().equals(adminEntity.getAdminPassword())) {
+                if (bCryptPasswordEncoder.matches(adminLogin.getAdminPassword(), adminEntity.getAdminPassword() )) {
                     return mapper.mapAdminFromAdminEntity(adminEntity);
                 }
             }
