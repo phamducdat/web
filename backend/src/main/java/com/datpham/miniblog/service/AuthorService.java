@@ -24,10 +24,6 @@ public class AuthorService {
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-//
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
-
     @Autowired
     public AuthorService(AuthorRepository authorRepository, AuthorMapper authorMapper ) {
         this.authorRepository = authorRepository;
@@ -60,5 +56,16 @@ public class AuthorService {
             }
         }
         return null;
+    }
+
+    public Author updateAuthor(String authorId, AuthorRequest authorRequest) {
+        AuthorEntity authorEntity = authorMapper.mapAuthorEntityFromAuthorRequest(authorId, authorRequest);
+        authorRepository.save(authorEntity);
+        return authorMapper.mapAuthorFromAuthorEntity(authorEntity);
+    }
+
+    public void deleteAuthor(String authorId) {
+        AuthorEntity authorEntity = authorRepository.getById(authorId);
+        authorRepository.delete(authorEntity);
     }
 }

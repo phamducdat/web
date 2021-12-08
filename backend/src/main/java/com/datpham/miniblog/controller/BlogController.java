@@ -53,4 +53,19 @@ public class BlogController implements BlogsApi {
 
         return new ResponseEntity<>(blog, HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Blog> updateBlog(String blogId, BlogRequest blogRequest) {
+        blogValidator.validateBlogExist(blogId);
+        Blog blog = blogService.updateBlog(blogId, blogRequest);
+
+        return new ResponseEntity<>(blog, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Void> deleteBlog(String blogId) {
+        blogValidator.validateBlogExist(blogId);
+        blogService.deleteBlog(blogId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

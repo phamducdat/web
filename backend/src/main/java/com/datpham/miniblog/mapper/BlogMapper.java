@@ -63,6 +63,19 @@ public class BlogMapper {
         CategoryEntity category = categoryRepository.getById(request.getCategoryId());
 
         entity.setBlogId(UUID.randomUUID().toString());
+        return getBlogEntity(request, entity, author, category);
+    }
+
+    public BlogEntity mapBlogEntityFromBlogRequest(String blogId, BlogRequest request) {
+        BlogEntity entity = new BlogEntity();
+        AuthorEntity author = authorRepository.getById(request.getAuthorId());
+        CategoryEntity category = categoryRepository.getById(request.getCategoryId());
+
+        entity.setBlogId(blogId);
+        return getBlogEntity(request, entity, author, category);
+    }
+
+    private BlogEntity getBlogEntity(BlogRequest request, BlogEntity entity, AuthorEntity author, CategoryEntity category) {
         entity.setBlogIntroduction(request.getBlogIntroduction());
         entity.setBlogPicture(request.getBlogPicture());
         entity.setBlogName(request.getBlogName());
@@ -72,13 +85,8 @@ public class BlogMapper {
         entity.setBlogIntroduction(request.getBlogIntroduction());
         entity.setCategoryId(category);
         entity.setCategoryName(category.getCategoryName());
-
-
         return entity;
     }
-
-
-
 
 
 }

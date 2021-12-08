@@ -142,6 +142,49 @@ paths:
           $ref: '#/responses/Forbidden'
         404:
           $ref: '#/responses/NotFound'
+    put:
+      tags:
+        - Authors
+      summary: Update Author
+      operationId: updateAuthor
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: authorRequest
+          description: The Author To Create
+          required: true
+          schema:
+            $ref: "#/definitions/AuthorRequest"
+      responses:
+        200:
+          $ref: '#/responses/Author'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+    delete:
+      tags:
+        - Authors
+      summary: Delete Author
+      operationId: deleteAuthor
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/OK'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
 
   /authors/{authorId}/blogs:
     parameters:
@@ -234,6 +277,51 @@ paths:
           $ref: '#/responses/Forbidden'
         404:
           $ref: '#/responses/NotFound'
+    put:
+      tags:
+        - Blogs
+      summary: Update Blog
+      operationId: updateBlog
+      parameters:
+        - in: body
+          name: blogRequest
+          required: true
+          schema:
+            $ref: "#/definitions/BlogRequest"
+
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/Blog'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+
+    delete:
+      tags:
+        - Blogs
+      summary: delete blog
+      operationId: deleteBlog
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        204:
+          $ref: '#/responses/NoContent'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+
 
 
   /contacts:
@@ -460,10 +548,6 @@ definitions:
       blogDate:
         type: string
         format: date
-
-
-
-
 
 
   BlogList:

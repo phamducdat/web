@@ -51,8 +51,18 @@ public class BlogService {
         }
 
         return blogList;
-
     }
 
+
+    public Blog updateBlog(String blogId, BlogRequest blogRequest) {
+        BlogEntity blogEntity = mapper.mapBlogEntityFromBlogRequest(blogId, blogRequest);
+        blogRepository.save(blogEntity);
+        return mapper.mapBlogFromBlogEntity(blogEntity);
+    }
+
+    public void deleteBlog(String blogId) {
+        blogRepository.deleteById(blogId);
+
+    }
 
 }

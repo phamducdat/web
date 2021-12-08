@@ -69,4 +69,19 @@ public class AuthorController implements AuthorsApi {
 
         return new ResponseEntity<>(author, HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Void> deleteAuthor(String authorId) {
+        authorValidator.validateAuthorExist(authorId);
+        authorService.deleteAuthor(authorId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @Override
+    public ResponseEntity<Author> updateAuthor(String authorId, AuthorRequest authorRequest) {
+        authorValidator.validateAuthorExist(authorId);
+        Author author = authorService.updateAuthor(authorId, authorRequest);
+
+        return new ResponseEntity<>(author, HttpStatus.OK);
+    }
 }
