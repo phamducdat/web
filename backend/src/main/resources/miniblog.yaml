@@ -209,7 +209,115 @@ paths:
           $ref: '#/responses/Forbidden'
         404:
           $ref: '#/responses/NotFound'
+  /categorys/:
+    get:
+      tags:
+        - Categorys
+      summary: Get All Category
+      operationId: getAllCategory
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/CategoryList'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
 
+    post:
+      tags:
+        - Categorys
+      summary: Create New Category
+      operationId: createCategory
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: categoryRequest
+#          description: The Author To Create
+          required: true
+          schema:
+            $ref: "#/definitions/CategoryRequest"
+      responses:
+        200:
+          $ref: '#/responses/Category'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+  /categorys/{categoryId}:
+    parameters:
+      - name: categoryId
+        in: path
+        description: The Id Of Category
+        required: true
+        type: string
+    get:
+      tags:
+        - Categorys
+      summary: Get Category By Id
+      operationId: getCategoryById
+      produces:
+        - application/json
+      responses:
+        200:
+          $ref: '#/responses/Category'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+    put:
+      tags:
+        - Categorys
+      summary: Update Category
+      operationId: updateCategory
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: categoryRequest
+          description: The Category To Create
+          required: true
+          schema:
+            $ref: "#/definitions/CategoryRequest"
+      responses:
+        200:
+          $ref: '#/responses/Category'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+    delete:
+      tags:
+        - Categorys
+      summary: Delete Category
+      operationId: deleteCategory
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        204:
+          $ref: '#/responses/NoContent'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
 
   /blogs:
     get:
@@ -618,6 +726,7 @@ definitions:
     items:
       $ref: "#/definitions/Contact"
 
+
   ContactRequest:
     type: object
     properties:
@@ -639,6 +748,33 @@ definitions:
       contactMessage:
         type: string
         example: How you do that
+
+  Category:
+    type: object
+    properties:
+      id:
+        type: string
+        format: int64
+
+      name:
+        type: string
+
+      type:
+        type: string
+
+  CategoryRequest:
+    type: object
+    properties:
+      name:
+        type: string
+
+      type:
+        type: string
+
+  CategoryList:
+    type: array
+    items:
+      $ref: '#/definitions/Category'
 
 responses:
 
@@ -670,6 +806,14 @@ responses:
     description: "ContactList response"
     schema:
       $ref: "#/definitions/ContactList"
+  Category:
+    description: "Category response"
+    schema:
+      $ref: "#/definitions/Category"
+  CategoryList:
+    description: "CategoryList response"
+    schema:
+      $ref: "#/definitions/CategoryList"
   OK:
     description: '200: OK'
   Created:

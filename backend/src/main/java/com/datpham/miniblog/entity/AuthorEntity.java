@@ -28,16 +28,16 @@ public class AuthorEntity {
     @Column(name = "AUTHOR_EMAIL", nullable = false)
     private String authorEmail;
 
-    @Column(name = "AUTHOR_DESCRIPTION", nullable = false)
+    @Column(name = "AUTHOR_DESCRIPTION")
     private String authorDescription;
 
-    @Column(name = "AUTHOR_AVATAR", nullable = false)
+    @Column(name = "AUTHOR_AVATAR")
     private String authorAvatar;
 
-    @Column(name = "AUTHOR_PHONE", nullable = false)
+    @Column(name = "AUTHOR_PHONE")
     private String authorPhone;
 
-    @Column(name = "AUTHOR_DATE_OF_BIRTH", nullable = false)
+    @Column(name = "AUTHOR_DATE_OF_BIRTH")
     private LocalDate authorDateOfBirth;
 
     @Column(name = "AUTHOR_PASSWORD", nullable = false)

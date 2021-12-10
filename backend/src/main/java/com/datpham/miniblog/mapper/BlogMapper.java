@@ -41,6 +41,7 @@ public class BlogMapper {
         blog.setBlogPicture(from.getBlogPicture());
         blog.setAuthorId(from.getAuthorId().getAuthorId());
         blog.setCategoryName(from.getCategoryId().getCategoryName());
+        blog.setCategoryId(from.getCategoryId().getCategoryId());
         return blog;
 
     }

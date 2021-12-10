@@ -22,11 +22,7 @@ public class BlogValidator {
 
     public void validateAddBlog(BlogRequest request) {
         checkRequiredField(request.getAuthorId(), "AuthorId");
-        checkRequiredField(request.getBlogContent(), "blogContent");
         checkRequiredField(request.getBlogName(), "blogName");
-        checkRequiredField(request.getBlogIntroduction(),"blogIntroduction");
-        checkRequiredField(request.getBlogContent(), "blogContent");
-        checkRequiredField(request.getBlogPicture(),"blogPicture");
     }
 
 

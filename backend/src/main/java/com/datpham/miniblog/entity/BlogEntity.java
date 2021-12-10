@@ -21,13 +21,13 @@ public class BlogEntity {
     @Column(name = "BLOG_NAME", nullable = false)
     private String blogName;
 
-    @Column(name = "BLOG_INTRODUCTION", nullable = false)
+    @Column(name = "BLOG_INTRODUCTION")
     private String blogIntroduction;
 
-    @Column(name = "BLOG_CONTENT", nullable = false)
+    @Column(name = "BLOG_CONTENT")
     private String blogContent;
 
-    @Column(name = "BLOG_PICTURE", nullable = false)
+    @Column(name = "BLOG_PICTURE")
     private String blogPicture;
 
 

@@ -27,8 +27,6 @@ public class AuthorValidator {
     }
 
     public void validateAddAuthor(AuthorRequest request) {
-        checkRequiredField(request.getAuthorAvatar(),errorMsg("avatar"));
-        checkRequiredField(request.getAuthorDescription(),errorMsg("description"));
         checkRequiredField(request.getAuthorEmail(),errorMsg("email"));
         checkRequiredField(request.getAuthorName(),errorMsg("name"));
     }
